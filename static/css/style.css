@@ -373,3 +373,41 @@ footer {
   background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
   box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
 }
+
+
+
+
+
+
+/* Стили текста и блока */
+.info-section {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  border: 2px solid #ccc;
+}
+
+.info-section h2 {
+  color: #0056b3;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.info-text {
+  font-size: 1.15em;
+  line-height: 1.6em;
+  margin-bottom: 15px;
+}
+
+.info-list {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.info-list li {
+  margin-bottom: 10px;
+  position: relative;
+}
