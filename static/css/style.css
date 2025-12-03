@@ -110,3 +110,66 @@ footer {
   background-position: center;
   margin-bottom: 10px;
 }
+
+
+
+
+.cpu {
+  background-image: url('/static/images/2.jpg');
+  background-color: #d9e8ff;
+}
+.ram {
+  background-image: url("{{ url_for('static', filename='images/ram.png') }}");
+  background-color: #d3f4d1;
+}
+.io {
+  background-image: url("{{ url_for('static', filename='images/io.png') }}");
+  background-color: #fce4b2;
+}
+.storage {
+  background-image: url("{{ url_for('static', filename='images/storage.png') }}");
+  background-color: #f5d1d1;
+}
+.card-text {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+
+.card-container.line-up {
+  width: 650px;  /* ширина всей линии */
+  height: 180px;
+  margin: 40px auto; /* центрируем контейнер */
+  animation: none !important;
+  transition: width 0.8s ease, height 0.8s ease;
+  
+  display: flex;
+  justify-content: space-between; /* равные интервалы между карточками */
+  align-items: center;
+  position: relative; /* для карточек */
+}
+
+/* Отменяем абсолютное позиционирование у карточек и трансформации */
+.card-container.line-up .card {
+  position: static !important;
+  width: 140px !important;
+  height: 140px !important;
+  border-radius: 50%;
+  transition: transform 0.8s ease;
+  transform: none !important;
+}
+
+
+.card-container.line-up .card:nth-child(1) {
+  
+}
+.card-container.line-up .card:nth-child(2) {
+  
+}
+.card-container.line-up .card:nth-child(3) {
+  
+}
+.card-container.line-up .card:nth-child(4) {
+  
+}
