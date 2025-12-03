@@ -53,4 +53,37 @@ window.onload = function () {
     resetModal();
   });
 
+
+
+
+
+  // --- Навигация по h2 и кнопка прокрутки вверх ---
+  // Создаем меню слева
+  const navMenu = document.createElement('div');
+  navMenu.id = 'nav-menu';
+  navMenu.innerHTML = '<h3>Содержание</h3><ul id="nav-list"></ul>';
+  document.body.appendChild(navMenu);
+
+  const navList = document.getElementById('nav-list');
+  const h2s = document.querySelectorAll('h2');
+  h2s.forEach((h2, index) => {
+    if (!h2.id) h2.id = 'section-' + index;
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + h2.id;
+    a.textContent = h2.textContent;
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
+
+
+  // Кнопка прокрутки вверх
+  const scrollTopBtn = document.createElement('button');
+  scrollTopBtn.id = 'scroll-top';
+  scrollTopBtn.textContent = '↑';
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  document.body.appendChild(scrollTopBtn);
+
 };
