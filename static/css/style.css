@@ -886,3 +886,116 @@ footer {
 }
 
 
+/* Улучшенные стили для прямоугольников выбора */
+.rectangles-container {
+  display: flex;
+  gap: 25px;
+  margin: 25px 0 40px 0;
+  flex-wrap: wrap;
+}
+
+.highlight-rect {
+  flex: 1;
+  min-width: 300px;
+  height: auto;
+  min-height: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+}
+
+.highlight-rect:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.blue-rect:hover {
+  border-color: #0071c5;
+  box-shadow: 0 15px 35px rgba(0, 113, 197, 0.2);
+}
+
+.red-rect:hover {
+  border-color: #ed1c24;
+  box-shadow: 0 15px 35px rgba(237, 28, 36, 0.2);
+}
+
+.highlight-rect img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.highlight-rect:hover img {
+  transform: scale(1.05);
+}
+
+.rect-info {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rect-info h4 {
+  margin: 0 0 15px 0;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.blue-rect .rect-info h4 {
+  color: #0071c5;
+  background: linear-gradient(135deg, #0071c5, #0056b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.red-rect .rect-info h4 {
+  color: #ed1c24;
+  background: linear-gradient(135deg, #ed1c24, #c81010);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rect-info > p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.rect-info ul {
+  padding-left: 20px;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.rect-info li {
+  margin-bottom: 12px;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 8px;
+}
+
+.rect-info li::before {
+  content: "✓";
+  color: #27ae60;
+  font-weight: bold;
+  position: absolute;
+  left: -18px;
+}
+
+.blue-rect .rect-info li::before {
+  color: #0071c5;
+}
+
+.red-rect .rect-info li::before {
+  color: #ed1c24;
+}
