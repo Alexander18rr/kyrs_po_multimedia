@@ -3836,3 +3836,936 @@ footer {
         font-size: 0.9em;
     }
 }
+
+
+
+
+/* ===== СТИЛИ ДЛЯ СЕКЦИИ АРХИТЕКТУРЫ КОМПЬЮТЕРОВ ===== */
+
+/* Общие стили секции */
+#computerArchitectureInfo {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+#computerArchitectureInfo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+    z-index: 0;
+}
+
+#computerArchitectureInfo .section-title {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    position: relative;
+    padding-bottom: 20px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    z-index: 1;
+}
+
+#computerArchitectureInfo .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.5);
+}
+
+/* Интерактивная схема архитектуры */
+.architecture-visualization {
+    margin: 50px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.architecture-visualization h3 {
+    color: #4facfe;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+    text-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+}
+
+.neumann-architecture {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.architecture-component {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+.architecture-component:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px currentColor;
+    z-index: 20;
+}
+
+.architecture-component[data-component="alu"] {
+    top: 140px;
+    left: 100px;
+    border-color: #4facfe;
+    color: #4facfe;
+}
+
+.architecture-component[data-component="cu"] {
+    top: 140px;
+    right: 100px;
+    border-color: #00f2fe;
+    color: #00f2fe;
+}
+
+.architecture-component[data-component="memory"] {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: #ff9a9e;
+    color: #ff9a9e;
+}
+
+.architecture-component[data-component="io"] {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: #a18cd1;
+    color: #a18cd1;
+}
+
+.comp-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+.comp-label {
+    font-weight: 600;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px currentColor;
+}
+
+/* Соединительные линии */
+.connection {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 5;
+}
+
+.alu-cu {
+    top: 200px;
+    left: 220px;
+    width: calc(100% - 440px);
+    height: 2px;
+}
+
+.cu-memory {
+    top: 80px;
+    right: 170px;
+    width: 100px;
+    height: 2px;
+    transform: rotate(-45deg);
+    transform-origin: right center;
+}
+
+.memory-alu {
+    top: 80px;
+    left: 170px;
+    width: 100px;
+    height: 2px;
+    transform: rotate(45deg);
+    transform-origin: left center;
+}
+
+.cu-io {
+    bottom: 140px;
+    right: 170px;
+    width: 100px;
+    height: 2px;
+    transform: rotate(45deg);
+    transform-origin: right center;
+}
+
+.io-memory {
+    bottom: 140px;
+    left: 170px;
+    width: 100px;
+    height: 2px;
+    transform: rotate(-45deg);
+    transform-origin: left center;
+}
+
+/* Шина данных */
+.data-bus {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ff9a9e, transparent);
+    animation: busFlow 3s linear infinite;
+}
+
+@keyframes busFlow {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Поток данных */
+.data-flow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff9a9e;
+    border-radius: 50%;
+    top: 48%;
+    left: -20px;
+    animation: dataMove 5s linear infinite;
+    box-shadow: 0 0 20px #ff9a9e;
+}
+
+@keyframes dataMove {
+    0% { left: -20px; }
+    25% { left: 25%; }
+    50% { left: 50%; }
+    75% { left: 75%; }
+    100% { left: calc(100% + 20px); }
+}
+
+.architecture-details {
+    margin-top: 30px;
+}
+
+.arch-info {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.default-arch-message {
+    text-align: center;
+    color: #cccccc;
+}
+
+.default-arch-message span {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Изображение архитектуры */
+.architecture-main-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 40px 0;
+    border: 3px solid #4facfe;
+    box-shadow: 0 0 40px rgba(79, 172, 254, 0.3);
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.architecture-main-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 60px rgba(79, 172, 254, 0.5);
+}
+
+/* Введение */
+.architecture-intro {
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.1));
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.architecture-intro .highlight {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* Сравнение архитектур */
+.architecture-comparison {
+    margin: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.architecture-comparison h3 {
+    color: #00f2fe;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.arch-comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.arch-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.arch-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.neumann-arch {
+    border-color: #4facfe;
+}
+
+.harvard-arch {
+    border-color: #ff9a9e;
+}
+
+.modified-arch {
+    border-color: #a18cd1;
+}
+
+.arch-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.arch-icon {
+    font-size: 2em;
+}
+
+.arch-header h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.3em;
+}
+
+.arch-year {
+    color: #cccccc;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.arch-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.arch-features li {
+    margin-bottom: 10px;
+    color: #cccccc;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.arch-features li::before {
+    content: "•";
+    color: currentColor;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.neumann-arch .arch-features li::before { color: #4facfe; }
+.harvard-arch .arch-features li::before { color: #ff9a9e; }
+.modified-arch .arch-features li::before { color: #a18cd1; }
+
+.arch-use {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.use-label {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.use-value {
+    color: #cccccc;
+    font-size: 0.9em;
+}
+
+/* Принципы фон Неймана */
+.neumann-principles {
+    margin: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.neumann-principles h3 {
+    color: #ff9a9e;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.principle-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+    border-left: 4px solid #4facfe;
+}
+
+.principle-card:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.principle-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2em;
+    flex-shrink: 0;
+}
+
+.principle-content {
+    flex: 1;
+}
+
+.principle-content h4 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.principle-content p {
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.principle-example {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #ff9a9e;
+}
+
+.example-label {
+    color: #ff9a9e;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.example-text {
+    color: #cccccc;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Эволюция архитектур */
+.architecture-evolution {
+    margin: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.architecture-evolution h3 {
+    color: #a18cd1;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.evolution-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.evolution-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #4facfe, #a18cd1);
+    border-radius: 2px;
+    transform: translateX(-50%);
+}
+
+.evolution-era {
+    position: relative;
+    width: 45%;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+.evolution-era:nth-child(odd) {
+    left: 0;
+    padding-right: 60px;
+    text-align: right;
+}
+
+.evolution-era:nth-child(even) {
+    left: 55%;
+    padding-left: 60px;
+}
+
+.evolution-era:nth-child(1) { animation-delay: 0.1s; }
+.evolution-era:nth-child(2) { animation-delay: 0.2s; }
+.evolution-era:nth-child(3) { animation-delay: 0.3s; }
+.evolution-era:nth-child(4) { animation-delay: 0.4s; }
+.evolution-era:nth-child(5) { animation-delay: 0.5s; }
+.evolution-era:nth-child(6) { animation-delay: 0.6s; }
+
+.evolution-era::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #4facfe;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    top: 0;
+}
+
+.evolution-era:nth-child(odd)::before {
+    right: -12px;
+}
+
+.evolution-era:nth-child(even)::before {
+    left: -12px;
+}
+
+.era-period {
+    color: #4facfe;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+.evolution-era h4 {
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+}
+
+.evolution-era p {
+    color: #cccccc;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Современные тенденции */
+.modern-trends {
+    margin: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.modern-trends h3 {
+    color: #00f2fe;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.trends-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.trend-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trend-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00f2fe;
+}
+
+.trend-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.trend-item h4 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.trend-item p {
+    color: #cccccc;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+/* Практическое значение */
+.architecture-significance {
+    margin: 60px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(255, 154, 158, 0.1), rgba(161, 140, 209, 0.1));
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.architecture-significance h3 {
+    color: #ff9a9e;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.significance-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.significance-point {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #a18cd1;
+}
+
+.significance-point h4 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.significance-point p {
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+/* Викторина */
+.architecture-quiz {
+    margin: 60px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.architecture-quiz h3 {
+    color: #4facfe;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.quiz-question {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.quiz-question p {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.quiz-option {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #4facfe;
+    color: #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.quiz-option:hover {
+    background: rgba(79, 172, 254, 0.2);
+    transform: translateY(-3px);
+}
+
+.quiz-feedback {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.quiz-feedback p {
+    color: #cccccc;
+    text-align: center;
+    margin: 0;
+}
+
+.quiz-next {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.quiz-next:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+}
+
+/* Заключение */
+.architecture-conclusion {
+    margin: 60px 0 0;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.1));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.architecture-quote {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #4facfe;
+}
+
+.architecture-quote blockquote {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.architecture-quote cite {
+    display: block;
+    margin-top: 15px;
+    color: #cccccc;
+    font-size: 0.9em;
+    font-style: normal;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .neumann-architecture {
+        height: 350px;
+    }
+    
+    .architecture-component {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .comp-icon {
+        font-size: 2em;
+    }
+    
+    .comp-label {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .neumann-architecture {
+        height: 300px;
+    }
+    
+    .architecture-component {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .architecture-component[data-component="alu"] {
+        left: 50px;
+    }
+    
+    .architecture-component[data-component="cu"] {
+        right: 50px;
+    }
+    
+    .evolution-era:nth-child(odd),
+    .evolution-era:nth-child(even) {
+        width: 90%;
+        left: 5%;
+        padding: 0 0 0 40px;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+    
+    .evolution-era::before {
+        left: -8px !important;
+        right: auto !important;
+    }
+    
+    .evolution-timeline::before {
+        left: 20px;
+    }
+    
+    .arch-comparison-grid,
+    .principles-grid,
+    .trends-container,
+    .significance-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .neumann-architecture {
+        height: 250px;
+    }
+    
+    .architecture-component {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .comp-icon {
+        font-size: 1.5em;
+    }
+    
+    .comp-label {
+        font-size: 0.9em;
+    }
+}
