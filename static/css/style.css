@@ -1762,3 +1762,562 @@ footer {
         padding: 15px;
     }
 }
+
+
+/* ===== СТИЛИ ДЛЯ СЕКЦИИ КОМПОНЕНТОВ НОУТБУКОВ ===== */
+
+/* Заголовок секции */
+#laptopComponentsInfo .section-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#laptopComponentsInfo .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* Интерактивная схема ноутбука */
+.laptop-overview {
+    display: flex;
+    gap: 40px;
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    border: 2px solid #dee3ea;
+    align-items: center;
+}
+
+.laptop-visual {
+    flex: 1;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.laptop-diagram {
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(135deg, #d1d8e0, #a5b1c2);
+    border-radius: 15px;
+    position: relative;
+    border: 3px solid #778ca3;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: perspective(1000px) rotateX(10deg);
+}
+
+.laptop-part {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.laptop-part:hover {
+    transform: scale(1.1);
+    z-index: 3;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.cpu-part {
+    width: 60px;
+    height: 60px;
+    top: 30px;
+    left: 50px;
+    border-color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    animation: pulseCpu 2s infinite;
+}
+
+.ram-part {
+    width: 80px;
+    height: 40px;
+    top: 30px;
+    right: 50px;
+    border-color: #2196F3;
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.storage-part {
+    width: 100px;
+    height: 40px;
+    bottom: 50px;
+    left: 40px;
+    border-color: #FF9800;
+    background: rgba(255, 152, 0, 0.1);
+}
+
+.battery-part {
+    width: 120px;
+    height: 30px;
+    bottom: 50px;
+    right: 40px;
+    border-color: #9C27B0;
+    background: rgba(156, 39, 176, 0.1);
+}
+
+.cooling-part {
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: #f44336;
+    background: rgba(244, 67, 54, 0.1);
+}
+
+.part-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+}
+
+@keyframes pulseCpu {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.component-details {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.component-details h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.detail-content {
+    min-height: 200px;
+    margin-top: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.default-message {
+    text-align: center;
+    color: #666;
+}
+
+.default-message span {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Изображение ноутбука */
+.laptop-main-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: all 0.5s ease;
+}
+
+.laptop-main-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.25);
+}
+
+/* Вводный текст */
+.intro-text {
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+}
+
+.intro-text .highlight {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* Сравнение форм-факторов */
+.form-factor-comparison {
+    margin: 40px 0;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 2px solid #dee3ea;
+}
+
+.form-factor-comparison h3 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4em;
+}
+
+.form-factor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.form-factor {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 5px solid;
+}
+
+.form-factor:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.ultrabook {
+    border-top-color: #4CAF50;
+}
+
+.gaming {
+    border-top-color: #f44336;
+}
+
+.workstation {
+    border-top-color: #2196F3;
+}
+
+.factor-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.form-factor h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.form-factor ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form-factor li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #666;
+}
+
+.form-factor li:last-child {
+    border-bottom: none;
+}
+
+/* Сетка компонентов */
+.components-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.component-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.component-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.cpu-card {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+}
+
+.ram-card {
+    background: linear-gradient(135deg, #2196F3, #1565C0);
+}
+
+.storage-card {
+    background: linear-gradient(135deg, #FF9800, #EF6C00);
+}
+
+.display-card {
+    background: linear-gradient(135deg, #9C27B0, #6A1B9A);
+}
+
+.card-icon {
+    font-size: 2em;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.card-content li {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.tech-spec {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.spec-value {
+    color: #666;
+}
+
+/* Особенности ноутбуков */
+.laptop-features {
+    margin: 40px 0;
+}
+
+.critical-issue {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.critical-issue h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    flex-shrink: 0;
+}
+
+.feature-text p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.feature-text ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.feature-text li {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.feature-text li::before {
+    content: "⚠️";
+    position: absolute;
+    left: -25px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.feature-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.feature-item .feature-icon {
+    font-size: 2em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.feature-item h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Советы */
+.laptop-tips {
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 15px;
+}
+
+.laptop-tips h3 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4em;
+}
+
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tip {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.tip:hover {
+    transform: translateY(-5px);
+    background: white;
+}
+
+.tip-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.tip p {
+    margin: 0;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+.tip strong {
+    color: #667eea;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .laptop-overview {
+        flex-direction: column;
+    }
+    
+    .laptop-diagram {
+        width: 250px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-factor-grid,
+    .components-details-grid,
+    .features-grid,
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .laptop-overview {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .laptop-part {
+        padding: 5px;
+        font-size: 0.9em;
+    }
+    
+    .component-card,
+    .form-factor,
+    .feature-item,
+    .tip {
+        padding: 15px;
+    }
+}
