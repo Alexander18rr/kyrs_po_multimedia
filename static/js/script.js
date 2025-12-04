@@ -523,5 +523,410 @@ window.onload = function () {
   document.head.appendChild(laptopStyles);
 
   console.log('Все скрипты успешно загружены и инициализированы!');
+
+
+
+  // --- ИНТЕРАКТИВНАЯ СЕРВЕРНАЯ СТОЙКА ---
+  function initServerRack() {
+    const rackUnits = document.querySelectorAll('.rack-unit');
+    const rackDetail = document.getElementById('rackDetail');
+    
+    const rackData = {
+      'patch-panel': {
+        title: '📡 Патч-панели',
+        description: 'Центральная точка коммутации кабелей в серверной стойке',
+        details: [
+          'Организация сетевых подключений',
+          'Маркировка портов для удобства обслуживания',
+          'Кабельный менеджмент',
+          'Поддержка Cat6/Cat6A/Cat7'
+        ],
+        icon: '📡',
+        color: '#4CAF50'
+      },
+      'switch': {
+        title: '🔀 Коммутаторы',
+        description: 'Сетевые устройства для маршрутизации трафика между серверами',
+        details: [
+          'Управляемые и неуправляемые модели',
+          'Поддержка VLAN, QoS',
+          'PoE для питания устройств',
+          '10GbE, 40GbE, 100GbE порты'
+        ],
+        icon: '🔀',
+        color: '#2196F3'
+      },
+      'servers': {
+        title: '🖥️ Серверы',
+        description: 'Основные вычислительные узлы в стойке',
+        details: [
+          'Серверы 1U, 2U, 4U форм-фактора',
+          'Двухпроцессорные и многопроцессорные конфигурации',
+          'Горячая замена компонентов',
+          'Модульная архитектура'
+        ],
+        icon: '🖥️',
+        color: '#FF9800'
+      },
+      'storage': {
+        title: '💾 Системы хранения',
+        description: 'Масштабируемые хранилища данных',
+        details: [
+          'SAN/NAS системы',
+          'Дисковые массивы с RAID',
+          'SSD кэширование',
+          'Репликация данных'
+        ],
+        icon: '💾',
+        color: '#9C27B0'
+      },
+      'ups': {
+        title: '⚡ ИБП',
+        description: 'Источники бесперебойного питания',
+        details: [
+          'Защита от перепадов напряжения',
+          'Автономная работа при отключении электроэнергии',
+          'Стабилизация напряжения',
+          'Мониторинг состояния'
+        ],
+        icon: '⚡',
+        color: '#f44336'
+      },
+      'kvm': {
+        title: '⌨️ KVM-переключатели',
+        description: 'Управление несколькими серверами с одной консоли',
+        details: [
+          'Управление по IP',
+          'Поддержка до 32 серверов',
+          'Запись сессий',
+          'Интеграция с AD/LDAP'
+        ],
+        icon: '⌨️',
+        color: '#00BCD4'
+      },
+      'backup': {
+        title: '💽 Резервные серверы',
+        description: 'Системы резервного копирования и восстановления',
+        details: [
+          'Автоматическое резервное копирование',
+          'Восстановление в любой момент времени',
+          'Шифрование данных',
+          'Хранение вне площадки'
+        ],
+        icon: '💽',
+        color: '#607D8B'
+      },
+      'security': {
+        title: '🛡️ Системы безопасности',
+        description: 'Обеспечение физической и логической безопасности',
+        details: [
+          'Системы видеонаблюдения',
+          'Контроль доступа',
+          'Пожарная сигнализация',
+          'Системы газового пожаротушения'
+        ],
+        icon: '🛡️',
+        color: '#FFC107'
+      },
+      'management': {
+        title: '📊 Системы управления',
+        description: 'Централизованное управление инфраструктурой',
+        details: [
+          'DCIM системы',
+          'Мониторинг температуры и влажности',
+          'Управление питанием',
+          'Отчетность и аналитика'
+        ],
+        icon: '📊',
+        color: '#8BC34A'
+      },
+      'pdu': {
+        title: '🔌 Блоки распределения питания',
+        description: 'Управляемые источники питания для стоек',
+        details: [
+          'Управление по IP',
+          'Мониторинг потребления',
+          'Удаленная перезагрузка',
+          'Измерение параметров сети'
+        ],
+        icon: '🔌',
+        color: '#795548'
+      }
+    };
+    
+    rackUnits.forEach(unit => {
+      unit.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(10px)';
+        this.style.boxShadow = '0 0 20px rgba(33, 150, 243, 0.3)';
+      });
+      
+      unit.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('active')) {
+          this.style.transform = 'translateX(0)';
+          this.style.boxShadow = 'none';
+        }
+      });
+      
+      unit.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const unitType = this.dataset.unit;
+        const data = rackData[unitType];
+        
+        // Сброс активного состояния
+        rackUnits.forEach(u => u.classList.remove('active'));
+        this.classList.add('active');
+        this.style.transform = 'translateX(15px)';
+        this.style.boxShadow = '0 0 25px rgba(33, 150, 243, 0.5)';
+        
+        if (data && rackDetail) {
+          const detailsHtml = data.details.map(detail => 
+            `<li>${detail}</li>`
+          ).join('');
+          
+          rackDetail.innerHTML = `
+            <div class="rack-info" style="border-left: 5px solid ${data.color}">
+              <div class="rack-info-header">
+                <span class="rack-info-icon">${data.icon}</span>
+                <h4>${data.title}</h4>
+              </div>
+              <p class="rack-info-description">${data.description}</p>
+              <ul class="rack-info-details">
+                ${detailsHtml}
+              </ul>
+              <div class="rack-info-tip">
+                <strong>💡 Это важно:</strong> ${getRackTip(unitType)}
+              </div>
+            </div>
+          `;
+          
+          // Анимация появления
+          rackDetail.style.opacity = '0';
+          rackDetail.style.transform = 'translateY(10px)';
+          
+          setTimeout(() => {
+            rackDetail.style.transition = 'all 0.3s ease';
+            rackDetail.style.opacity = '1';
+            rackDetail.style.transform = 'translateY(0)';
+          }, 10);
+        }
+      });
+    });
+    
+    function getRackTip(unitType) {
+      const tips = {
+        'patch-panel': 'Правильная организация патч-панелей экономит до 40% времени при обслуживании.',
+        'switch': 'Используйте коммутаторы с поддержкой PoE+ для питания IP-телефонов и камер.',
+        'servers': 'Оптимальное охлаждение достигается при чередовании горячих и холодных рядов.',
+        'storage': 'Используйте SSD кэш для ускорения работы часто используемых данных.',
+        'ups': 'Регулярно тестируйте ИБП и заменяйте батареи каждые 3-4 года.',
+        'kvm': 'KVM over IP позволяет управлять серверами из любой точки мира.',
+        'backup': 'Правило 3-2-1: 3 копии данных, 2 разных носителя, 1 копия вне площадки.',
+        'security': 'Системы газового пожаротушения сохраняют оборудование невредимым.',
+        'management': 'DCIM системы помогают оптимизировать энергопотребление ЦОД.',
+        'pdu': 'Управляемые PDU позволяют перезагружать зависшие устройства удаленно.'
+      };
+      return tips[unitType] || 'Это важный компонент серверной инфраструктуры.';
+    }
+    
+    // Активируем первый элемент по умолчанию
+    if (rackUnits.length > 0) {
+      setTimeout(() => {
+        rackUnits[2]?.click(); // Активируем серверы по умолчанию
+      }, 1500);
+    }
+  }
+  
+  // Инициализация серверной стойки
+  if (document.getElementById('serverComponentsInfo')) {
+    initServerRack();
+    
+    // Добавляем кнопку сброса для серверной стойки
+    const rackContainer = document.querySelector('.rack-details');
+    if (rackContainer) {
+      const resetRackButton = document.createElement('button');
+      resetRackButton.textContent = 'Сбросить выбор';
+      resetRackButton.className = 'reset-rack-btn';
+      resetRackButton.style.cssText = `
+        display: block;
+        margin: 20px auto 10px;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+      `;
+      
+      resetRackButton.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 6px 20px rgba(13, 71, 161, 0.4)';
+      });
+      
+      resetRackButton.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = '0 4px 15px rgba(13, 71, 161, 0.3)';
+      });
+      
+      resetRackButton.addEventListener('click', function() {
+        document.querySelectorAll('.rack-unit').forEach(unit => {
+          unit.classList.remove('active');
+          unit.style.transform = 'translateX(0)';
+          unit.style.boxShadow = 'none';
+        });
+        
+        const rackDetail = document.getElementById('rackDetail');
+        if (rackDetail) {
+          rackDetail.innerHTML = `
+            <div class="default-rack-message">
+              <span>👆</span>
+              <p>Нажмите на уровень серверной стойки для получения информации</p>
+            </div>
+          `;
+        }
+      });
+      
+      rackContainer.appendChild(resetRackButton);
+    }
+  }
+  
+  // Добавляем динамические стили для серверной стойки
+  const serverStyles = document.createElement('style');
+  serverStyles.textContent = `
+    .rack-info {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    .rack-info-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .rack-info-icon {
+      font-size: 2.5em;
+    }
+    
+    .rack-info-header h4 {
+      margin: 0;
+      color: #2c3e50;
+      font-size: 1.3em;
+    }
+    
+    .rack-info-description {
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .rack-info-details {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+    
+    .rack-info-details li {
+      margin-bottom: 10px;
+      color: #555;
+      position: relative;
+      padding-left: 10px;
+    }
+    
+    .rack-info-details li::before {
+      content: "→";
+      color: #1565c0;
+      font-weight: bold;
+      position: absolute;
+      left: -15px;
+    }
+    
+    .rack-info-tip {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e3f2fd;
+      border-radius: 8px;
+      border-left: 4px solid #1565c0;
+      color: #0d47a1;
+    }
+    
+    .default-rack-message {
+      text-align: center;
+      color: #666;
+      padding: 40px 20px;
+    }
+    
+    .default-rack-message span {
+      font-size: 3em;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    /* Анимация для серверных карточек */
+    .server-component-card {
+      transition: all 0.3s ease;
+    }
+    
+    .server-component-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(13, 71, 161, 0.15);
+    }
+    
+    .tier-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    
+    .tech-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .trend-item:hover {
+      transform: translateY(-5px);
+      background: white;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  `;
+  
+  document.head.appendChild(serverStyles);
+
+  // --- ОБРАБОТЧИКИ ДЛЯ СЕРВЕРНЫХ СЕКЦИЙ ---
+  // Анимация для карточек сравнения
+  const comparisonCards = document.querySelectorAll('.comparison-card');
+  comparisonCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-10px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+    });
+  });
+
+  // Подсказка для новых пользователей серверной секции
+  if (document.getElementById('serverComponentsInfo') && !localStorage.getItem('serverComponentsVisited')) {
+    setTimeout(() => {
+      const showTip = confirm('🖥️ Добро пожаловать в раздел серверных компонентов! Нажмите на элементы серверной стойки, чтобы узнать подробности. Нажмите OK, чтобы продолжить.');
+      if (showTip) {
+        localStorage.setItem('serverComponentsVisited', 'true');
+      }
+    }, 2000);
+  }
+
+  console.log('Все скрипты успешно загружены и инициализированы!');
+
+
+
+
+
+
 };
 
