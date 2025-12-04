@@ -1801,23 +1801,306 @@
   </section>
 
   <section class="info-section" id="computerArchitectureInfo">
-    <h2>Архитектура компьютеров</h2>
-    <img src="/static/images/computer-architecture.jpg" alt="Схема архитектуры компьютера" />
-    <p class="info-text">
-      Архитектура компьютера определяет принципы организации и взаимодействия его компонентов. Наиболее распространенной является архитектура фон Неймана, предложенная в 1945 году.
-    </p>
-    <p class="info-text">
-      Основные принципы архитектуры фон Неймана:
-    </p>
-    <ul class="info-list">
-      <li><strong>Принцип программного управления</strong> — программа состоит из набора команд, выполняемых процессором автоматически</li>
-      <li><strong>Принцип однородности памяти</strong> — программы и данные хранятся в одной памяти</li>
-      <li><strong>Принцип адресности</strong> — основная память состоит из пронумерованных ячеек</li>
-      <li><strong>Последовательное выполнение команд</strong> — команды выполняются одна за другой</li>
-    </ul>
-    <p class="info-text">
-      Современные компьютеры часто используют модифицированную гарвардскую архитектуру, в которой кэш-память разделена на инструкции и данные, что повышает производительность.
-    </p>
+    <h2 class="section-title">🏗️ Архитектура компьютеров</h2>
+    
+    <!-- Интерактивная схема архитектуры фон Неймана -->
+    <div class="architecture-visualization">
+        <h3><span class="viz-icon">📐</span> Интерактивная схема архитектуры фон Неймана</h3>
+        <div class="neumann-architecture">
+            <div class="architecture-component" data-component="alu">
+                <div class="comp-icon">⚡</div>
+                <div class="comp-label">АЛУ</div>
+            </div>
+            <div class="architecture-component" data-component="cu">
+                <div class="comp-icon">🎛️</div>
+                <div class="comp-label">УУ</div>
+            </div>
+            <div class="architecture-component" data-component="memory">
+                <div class="comp-icon">💾</div>
+                <div class="comp-label">Память</div>
+            </div>
+            <div class="architecture-component" data-component="io">
+                <div class="comp-icon">🖥️</div>
+                <div class="comp-label">УВВ</div>
+            </div>
+            
+            <!-- Соединительные линии -->
+            <div class="connection alu-cu"></div>
+            <div class="connection cu-memory"></div>
+            <div class="connection memory-alu"></div>
+            <div class="connection cu-io"></div>
+            <div class="connection io-memory"></div>
+            
+            <!-- Шина данных -->
+            <div class="data-bus"></div>
+            
+            <!-- Поток данных -->
+            <div class="data-flow"></div>
+        </div>
+        <div class="architecture-details">
+            <div class="arch-info" id="archDetail">
+                <div class="default-arch-message">
+                    <span>👆</span>
+                    <p>Нажмите на компонент архитектуры для получения информации</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <img src="/static/images/computer-architecture.jpg" alt="Схема архитектуры компьютера" class="architecture-main-image" />
+    
+    <div class="architecture-intro">
+        <p class="info-text">
+            Архитектура компьютера определяет <span class="highlight">принципы организации и взаимодействия его компонентов</span>. Наиболее распространенной является <span class="highlight">архитектура фон Неймана</span>, предложенная в 1945 году Джоном фон Нейманом, которая легла в основу большинства современных компьютеров.
+        </p>
+    </div>
+    
+    <!-- Сравнение архитектур -->
+    <div class="architecture-comparison">
+        <h3><span class="compare-icon">⚖️</span> Сравнение архитектур: фон Неймана vs Гарвардская</h3>
+        <div class="arch-comparison-grid">
+            <div class="arch-card neumann-arch">
+                <div class="arch-header">
+                    <span class="arch-icon">👨‍🔬</span>
+                    <h4>Архитектура фон Неймана</h4>
+                </div>
+                <div class="arch-content">
+                    <p class="arch-year">1945 год</p>
+                    <ul class="arch-features">
+                        <li><strong>Единая память:</strong> Программы и данные в одном хранилище</li>
+                        <li><strong>Последовательное выполнение:</strong> Одна команда за другой</li>
+                        <li><strong>Универсальность:</strong> Гибкость и простота программирования</li>
+                        <li><strong>Ограничение:</strong> "Узкое горло" при доступе к памяти</li>
+                    </ul>
+                    <div class="arch-use">
+                        <span class="use-label">Применение:</span>
+                        <span class="use-value">Универсальные компьютеры, ПК, серверы</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arch-card harvard-arch">
+                <div class="arch-header">
+                    <span class="arch-icon">🎓</span>
+                    <h4>Гарвардская архитектура</h4>
+                </div>
+                <div class="arch-content">
+                    <p class="arch-year">1944 год</p>
+                    <ul class="arch-features">
+                        <li><strong>Раздельная память:</strong> Программы и данные разделены</li>
+                        <li><strong>Параллельный доступ:</strong> Одновременная загрузка команд и данных</li>
+                        <li><strong>Высокая скорость:</strong> Отсутствие конфликтов при доступе</li>
+                        <li><strong>Ограничение:</strong> Сложность программирования</li>
+                    </ul>
+                    <div class="arch-use">
+                        <span class="use-label">Применение:</span>
+                        <span class="use-value">Микроконтроллеры, DSP, кэш-память CPU</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arch-card modified-arch">
+                <div class="arch-header">
+                    <span class="arch-icon">🚀</span>
+                    <h4>Модифицированная гарвардская</h4>
+                </div>
+                <div class="arch-content">
+                    <p class="arch-year">Современная</p>
+                    <ul class="arch-features">
+                        <li><strong>Гибридный подход:</strong> Общая ОЗУ + раздельный кэш</li>
+                        <li><strong>Производительность:</strong> Лучшее из двух архитектур</li>
+                        <li><strong>Кэширование:</strong> L1-кэш разделен на инструкции/данные</li>
+                        <li><strong>Универсальность:</strong> Сохраняет преимущества фон Неймана</li>
+                    </ul>
+                    <div class="arch-use">
+                        <span class="use-label">Применение:</span>
+                        <span class="use-value">Современные процессоры (x86, ARM)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Принципы фон Неймана в деталях -->
+    <div class="neumann-principles">
+        <h3><span class="principles-icon">📜</span> Основные принципы архитектуры фон Неймана</h3>
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-number">1</div>
+                <div class="principle-content">
+                    <h4>Принцип программного управления</h4>
+                    <p>Программа состоит из набора команд, выполняемых процессором автоматически без вмешательства человека. Команды хранятся в памяти как данные.</p>
+                    <div class="principle-example">
+                        <span class="example-label">Пример:</span>
+                        <span class="example-text">Любая программа на C, Python, Java</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="principle-card">
+                <div class="principle-number">2</div>
+                <div class="principle-content">
+                    <h4>Принцип однородности памяти</h4>
+                    <p>Программы и данные хранятся в одной и той же памяти. Это позволяет программам модифицировать себя и другие программы.</p>
+                    <div class="principle-example">
+                        <span class="example-label">Пример:</span>
+                        <span class="example-text">JIT-компиляция, самоизменяющийся код</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="principle-card">
+                <div class="principle-number">3</div>
+                <div class="principle-content">
+                    <h4>Принцип адресности</h4>
+                    <p>Основная память состоит из пронумерованных ячеек, каждая из которых имеет уникальный адрес. Процессор обращается к данным по адресам.</p>
+                    <div class="principle-example">
+                        <span class="example-label">Пример:</span>
+                        <span class="example-text">Указатели в C/C++, адреса ячеек RAM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="principle-card">
+                <div class="principle-number">4</div>
+                <div class="principle-content">
+                    <h4>Последовательное выполнение команд</h4>
+                    <p>Команды выполняются одна за другой в порядке их расположения в памяти (если не указано иное командой перехода).</p>
+                    <div class="principle-example">
+                        <span class="example-label">Пример:</span>
+                        <span class="example-text">Линейное выполнение кода, циклы, условия</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Эволюция архитектур -->
+    <div class="architecture-evolution">
+        <h3><span class="evolution-icon">📈</span> Эволюция компьютерных архитектур</h3>
+        <div class="evolution-timeline">
+            <div class="evolution-era">
+                <div class="era-period">1940-е</div>
+                <div class="era-content">
+                    <h4>Первое поколение</h4>
+                    <p>Ламповые компьютеры с фиксированной программой (ENIAC)</p>
+                </div>
+            </div>
+            <div class="evolution-era">
+                <div class="era-period">1950-е</div>
+                <div class="era-content">
+                    <h4>Архитектура фон Неймана</h4>
+                    <p>EDVAC, IAS machine - программы хранятся в памяти</p>
+                </div>
+            </div>
+            <div class="evolution-era">
+                <div class="era-period">1960-1970-е</div>
+                <div class="era-content">
+                    <h4>Мини-компьютеры</h4>
+                    <p>DEC PDP, IBM System/360 - стандартизация</p>
+                </div>
+            </div>
+            <div class="evolution-era">
+                <div class="era-period">1980-1990-е</div>
+                <div class="era-content">
+                    <h4>Микропроцессоры</h4>
+                    <p>x86, RISC - массовое производство ПК</p>
+                </div>
+            </div>
+            <div class="evolution-era">
+                <div class="era-period">2000-е</div>
+                <div class="era-content">
+                    <h4>Многоядерные системы</h4>
+                    <p>Многопоточность, параллельные вычисления</p>
+                </div>
+            </div>
+            <div class="evolution-era">
+                <div class="era-period">2010-е - сейчас</div>
+                <div class="era-content">
+                    <h4>Гетерогенные архитектуры</h4>
+                    <p>CPU+GPU, нейроморфные, квантовые вычисления</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Современные тенденции -->
+    <div class="modern-trends">
+        <h3><span class="trends-icon">🔮</span> Современные тенденции в архитектуре</h3>
+        <div class="trends-container">
+            <div class="trend-item">
+                <div class="trend-icon">🔄</div>
+                <h4>Параллельные вычисления</h4>
+                <p>Многоядерные процессоры, GPGPU, массовый параллелизм для обработки больших данных</p>
+            </div>
+            <div class="trend-item">
+                <div class="trend-icon">🎯</div>
+                <h4>Специализированные ускорители</h4>
+                <p>TPU для ИИ, FPGA для конкретных задач, аппаратное ускорение специфичных операций</p>
+            </div>
+            <div class="trend-item">
+                <div class="trend-icon">🌉</div>
+                <h4>Гетерогенные системы</h4>
+                <p>Сочетание CPU, GPU, FPGA в одной системе, интеллектуальное распределение задач</p>
+            </div>
+            <div class="trend-item">
+                <div class="trend-icon">⚡</div>
+                <h4>Память нового типа</h4>
+                <p>3D XPoint, HBM, память с вычислениями in-memory, уменьшение задержек доступа</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Практическое значение -->
+    <div class="architecture-significance">
+        <h3><span class="significance-icon">💡</span> Практическое значение архитектуры</h3>
+        <div class="significance-content">
+            <div class="significance-point">
+                <h4>Для программистов</h4>
+                <p>Понимание архитектуры помогает писать эффективный код, учитывающий особенности работы процессора и памяти (кэш-локализация, векторизация, многопоточность).</p>
+            </div>
+            <div class="significance-point">
+                <h4>Для инженеров</h4>
+                <p>Знание архитектурных принципов необходимо при проектировании процессоров, оптимизации систем и выборе компонентов для конкретных задач.</p>
+            </div>
+            <div class="significance-point">
+                <h4>Для всех пользователей</h4>
+                <p>Понимание основ архитектуры помогает осознанно выбирать технику, понимать её ограничения и возможности для решения своих задач.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Интерактивная викторина -->
+    <div class="architecture-quiz">
+        <h3><span class="quiz-icon">🧠</span> Проверьте свои знания</h3>
+        <div class="quiz-container">
+            <div class="quiz-question" id="quizQuestion">
+                <p>Какой принцип архитектуры фон Неймана позволяет программам модифицировать сами себя?</p>
+            </div>
+            <div class="quiz-options">
+                <button class="quiz-option" data-answer="memory">Принцип однородности памяти</button>
+                <button class="quiz-option" data-answer="program">Принцип программного управления</button>
+                <button class="quiz-option" data-answer="address">Принцип адресности</button>
+                <button class="quiz-option" data-answer="sequence">Принцип последовательного выполнения</button>
+            </div>
+            <div class="quiz-feedback" id="quizFeedback">
+                <p>Выберите ответ, чтобы проверить свои знания!</p>
+            </div>
+            <button class="quiz-next" id="nextQuestion">Следующий вопрос →</button>
+        </div>
+    </div>
+    
+    <div class="architecture-conclusion">
+        <p class="info-text">
+            Современные компьютеры часто используют <span class="highlight">модифицированную гарвардскую архитектуру</span>, в которой кэш-память разделена на инструкции и данные, что позволяет совместить <span class="highlight">преимущества обеих архитектур</span>: высокую производительность гарвардской и гибкость фон Неймана.
+        </p>
+        <div class="architecture-quote">
+            <blockquote>
+                "Архитектура компьютера — это не просто набор компонентов, а язык, на котором мы общаемся с машиной"
+                <cite>— Джон фон Нейман</cite>
+            </blockquote>
+        </div>
+    </div>
   </section>
 
 <footer>
