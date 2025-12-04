@@ -3245,3 +3245,594 @@ footer {
     transform: scale(1.02);
     box-shadow: 0 0 60px rgba(0, 247, 255, 0.5);
 }
+
+
+/* Введение */
+.future-intro {
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(0, 247, 255, 0.1), rgba(255, 0, 255, 0.1));
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.future-intro .highlight {
+    background: linear-gradient(90deg, #00f7ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* Сравнение технологий */
+.tech-comparison {
+    margin: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-comparison h3 {
+    color: #00ff9d;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.comparison-matrix {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-cell {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.comparison-cell.category {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.comparison-cell.current, .comparison-cell.future, .comparison-cell.improvement {
+    justify-content: center;
+}
+
+.comparison-cell.current h4, .comparison-cell.future h4 {
+    color: #cccccc;
+    margin: 0;
+}
+
+.row-icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00f7ff, #0077ff);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    transition: width 1s ease;
+}
+
+.future-fill {
+    background: linear-gradient(90deg, #ff00ff, #ff0066);
+}
+
+.improvement-value {
+    color: #00ff9d;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+/* Сетка технологий */
+.future-tech-grid {
+    margin: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.future-tech-grid h3 {
+    color: #ff9900;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.tech-card {
+    perspective: 1000px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.tech-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.tech-card:hover .tech-card-inner {
+    transform: rotateY(180deg);
+}
+
+.tech-card-front, .tech-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tech-card-front {
+    border: 2px solid;
+}
+
+.tech-card-back {
+    transform: rotateY(180deg);
+    border: 2px solid;
+    overflow: hidden;
+}
+
+.quantum-tech .tech-card-front { background: rgba(0, 247, 255, 0.1); border-color: #00f7ff; }
+.quantum-tech .tech-card-back { background: rgba(0, 247, 255, 0.15); border-color: #00f7ff; }
+
+.neuromorphic-tech .tech-card-front { background: rgba(255, 0, 255, 0.1); border-color: #ff00ff; }
+.neuromorphic-tech .tech-card-back { background: rgba(255, 0, 255, 0.15); border-color: #ff00ff; }
+
+.optical-tech .tech-card-front { background: rgba(0, 255, 157, 0.1); border-color: #00ff9d; }
+.optical-tech .tech-card-back { background: rgba(0, 255, 157, 0.15); border-color: #00ff9d; }
+
+.bio-tech .tech-card-front { background: rgba(255, 153, 0, 0.1); border-color: #ff9900; }
+.bio-tech .tech-card-back { background: rgba(255, 153, 0, 0.15); border-color: #ff9900; }
+
+.tech-header {
+    margin-bottom: 20px;
+}
+
+.tech-main-icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+.tech-card h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.4em;
+}
+
+.tech-preview p {
+    color: #cccccc;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.tech-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: auto;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+.tech-card-back h5 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.tech-card-back ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    text-align: left;
+}
+
+.tech-card-back li {
+    margin-bottom: 10px;
+    color: #cccccc;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tech-card-back li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: currentColor;
+}
+
+.tech-status {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.status-label {
+    color: #cccccc;
+}
+
+.status-value {
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.in-development { background: rgba(0, 247, 255, 0.3); color: #00f7ff; }
+.prototype { background: rgba(255, 0, 255, 0.3); color: #ff00ff; }
+.research { background: rgba(0, 255, 157, 0.3); color: #00ff9d; }
+.experimental { background: rgba(255, 153, 0, 0.3); color: #ff9900; }
+
+/* Сценарии будущего */
+.future-scenarios {
+    margin: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.future-scenarios h3 {
+    color: #9d00ff;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.scenarios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.scenario {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid;
+    transition: all 0.3s ease;
+}
+
+.scenario:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.optimistic { border-color: #00ff9d; }
+.realistic { border-color: #00f7ff; }
+.pessimistic { border-color: #ff0066; }
+
+.scenario-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scenario-header h4 {
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    font-size: 1.3em;
+}
+
+.scenario-probability {
+    color: #cccccc;
+    font-size: 0.9em;
+}
+
+.scenario ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.scenario li {
+    margin-bottom: 12px;
+    color: #cccccc;
+    padding-left: 20px;
+    position: relative;
+}
+
+.scenario li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: currentColor;
+    font-weight: bold;
+}
+
+.optimistic li::before { color: #00ff9d; }
+.realistic li::before { color: #00f7ff; }
+.pessimistic li::before { color: #ff0066; }
+
+.scenario-impact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.impact-label {
+    color: #cccccc;
+}
+
+.impact-value {
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.positive { background: rgba(0, 255, 157, 0.3); color: #00ff9d; }
+.neutral { background: rgba(0, 247, 255, 0.3); color: #00f7ff; }
+.negative { background: rgba(255, 0, 102, 0.3); color: #ff0066; }
+
+/* Этические вопросы */
+.ethical-questions {
+    margin: 60px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.ethical-questions h3 {
+    color: #ff9900;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.question-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.question-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ff9900;
+}
+
+.question-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.question-item h4 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.question-item p {
+    color: #cccccc;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+/* Опрос */
+.future-poll {
+    margin: 60px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.future-poll h3 {
+    color: #ff00ff;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.poll-question {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.poll-question p {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.poll-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.poll-option {
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #00f7ff;
+    color: #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.poll-option:hover {
+    background: #00f7ff;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 247, 255, 0.3);
+}
+
+.poll-results {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.results-placeholder p {
+    color: #cccccc;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Заключение */
+.future-conclusion {
+    margin: 60px 0 0;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(0, 247, 255, 0.1), rgba(255, 0, 255, 0.1));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.future-quote {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #00ff9d;
+}
+
+.future-quote blockquote {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.future-quote cite {
+    display: block;
+    margin-top: 15px;
+    color: #cccccc;
+    font-size: 0.9em;
+    font-style: normal;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .tech-cube {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .front { transform: translateZ(75px); }
+    .back { transform: translateZ(-75px) rotateY(180deg); }
+    .right { transform: translateX(75px) rotateY(90deg); }
+    .left { transform: translateX(-75px) rotateY(-90deg); }
+    .top { transform: translateY(-75px) rotateX(90deg); }
+    .bottom { transform: translateY(75px) rotateX(-90deg); }
+    
+    .comparison-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-cell {
+        padding: 15px;
+    }
+    
+    .scenarios-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-card {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-cube {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .front { transform: translateZ(60px); }
+    .back { transform: translateZ(-60px) rotateY(180deg); }
+    .right { transform: translateX(60px) rotateY(90deg); }
+    .left { transform: translateX(-60px) rotateY(-90deg); }
+    .top { transform: translateY(-60px) rotateX(90deg); }
+    .bottom { transform: translateY(60px) rotateX(-90deg); }
+    
+    .face-content {
+        padding: 10px;
+    }
+    
+    .tech-icon {
+        font-size: 2em;
+    }
+    
+    .cube-face h4 {
+        font-size: 0.9em;
+    }
+}
