@@ -999,3 +999,316 @@ footer {
 .red-rect .rect-info li::before {
   color: #ed1c24;
 }
+
+
+
+/* Дополнение для BIOS/UEFI анимации */
+
+/* Стили для визуального сравнения BIOS/UEFI */
+.firmware-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px 0;
+  padding: 25px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border: 2px solid #dee3ea;
+  box-shadow: 0 4px 15px rgba(70,110,200,0.11);
+}
+
+.firmware-item {
+  text-align: center;
+  width: 180px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bios-item {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  border: 2px solid #b0b0b0;
+  animation: legacyPulse 3s infinite;
+}
+
+.uefi-item {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border: 2px solid #2196f3;
+  animation: modernGlow 3s infinite alternate;
+}
+
+.firmware-label {
+  font-weight: 700;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  z-index: 2;
+  position: relative;
+}
+
+.bios-item .firmware-label {
+  color: #555;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+}
+
+.uefi-item .firmware-label {
+  color: #1565c0;
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.evolution-arrow {
+  font-size: 2.5em;
+  color: #0056b3;
+  animation: arrowPulse 2s infinite;
+  text-shadow: 0 0 10px rgba(0, 86, 179, 0.3);
+}
+
+/* Анимации */
+@keyframes legacyPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(176, 176, 176, 0);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(176, 176, 176, 0.5);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes modernGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+    transform: translateY(0);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(33, 150, 243, 0.8);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes arrowPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Анимация для элементов BIOS */
+.legacy-animation {
+  width: 100%;
+  height: 80px;
+  background: #0a0a0a;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #333;
+  margin: 10px 0;
+}
+
+.legacy-animation::before {
+  content: ">> INITIALIZING BIOS...\n>> CPU: OK\n>> RAM: 16384MB OK\n>> HDD: DETECTED\n>> BOOTING...";
+  position: absolute;
+  color: #0f0;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  line-height: 1.4;
+  white-space: pre;
+  padding: 8px;
+  animation: biosScroll 8s linear infinite;
+  text-shadow: 0 0 5px #0f0;
+}
+
+@keyframes biosScroll {
+  0% {
+    top: 80px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: -100px;
+    opacity: 0;
+  }
+}
+
+/* Анимация для элементов UEFI */
+.modern-animation {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #1a237e, #283593);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.modern-animation::before,
+.modern-animation::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.modern-animation::before {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  top: 15px;
+  left: calc(50% - 25px);
+  animation: uefiPulse 3s infinite alternate;
+}
+
+.modern-animation::after {
+  width: 20px;
+  height: 20px;
+  background: #4fc3f7;
+  top: 30px;
+  left: calc(50% - 10px);
+  animation: uefiFloat 3s ease-in-out infinite;
+  box-shadow: 0 0 15px #4fc3f7;
+}
+
+@keyframes uefiPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+@keyframes uefiFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(0) rotate(180deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(270deg);
+  }
+}
+
+/* Появление списка функций с задержкой */
+#biosUefiInfo .info-list li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInItem 0.5s forwards;
+  position: relative;
+  padding-left: 25px;
+}
+
+#biosUefiInfo .info-list li::before {
+  content: "⚙️";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  animation: iconAppear 0.3s forwards;
+  animation-delay: calc(var(--delay) + 0.1s);
+}
+
+#biosUefiInfo .info-list li:nth-child(1) { 
+  --delay: 0.1s; 
+  animation-delay: 0.1s; 
+}
+#biosUefiInfo .info-list li:nth-child(2) { 
+  --delay: 0.2s; 
+  animation-delay: 0.2s; 
+}
+#biosUefiInfo .info-list li:nth-child(3) { 
+  --delay: 0.3s; 
+  animation-delay: 0.3s; 
+}
+#biosUefiInfo .info-list li:nth-child(4) { 
+  --delay: 0.4s; 
+  animation-delay: 0.4s; 
+}
+
+@keyframes slideInItem {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes iconAppear {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Анимация для изображения UEFI */
+#biosUefiInfo img {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 3px solid transparent;
+}
+
+#biosUefiInfo img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 15px 35px rgba(33, 150, 243, 0.3);
+  border-color: #2196f3;
+}
+
+/* Анимация для заголовка секции */
+#biosUefiInfo h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+#biosUefiInfo h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0056b3, #2196f3);
+  animation: titleUnderline 2s forwards;
+  border-radius: 2px;
+}
+
+@keyframes titleUnderline {
+  to {
+    width: 100%;
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .firmware-comparison {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .firmware-item {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .evolution-arrow {
+    transform: rotate(90deg);
+    margin: 10px 0;
+  }
+}
