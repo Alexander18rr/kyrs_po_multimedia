@@ -828,25 +828,236 @@
   </section>
 
   <section class="info-section" id="laptopComponentsInfo">
-    <h2>Компоненты ноутбуков</h2>
-    <img src="/static/images/laptop-components.jpg" alt="Фото компонентов ноутбука" />
-    <p class="info-text">
-      Ноутбуки содержат те же основные компоненты, что и настольные компьютеры, но в компактном форм-факторе с оптимизацией для мобильного использования.
-    </p>
-    <p class="info-text">
-      Особенности компонентов ноутбуков:
-    </p>
-    <ul class="info-list">
-      <li><strong>Мобильные процессоры</strong> — оптимизированы для энергоэффективности</li>
-      <li><strong>Память SO-DIMM</strong> — уменьшенные модули оперативной памяти</li>
-      <li><strong>2.5" накопители</strong> — компактные HDD и SSD</li>
-      <li><strong>Интегрированные дисплеи</strong> — встроенные экраны различных технологий (LCD, OLED)</li>
-      <li><strong>Аккумуляторы</strong> — литий-ионные или литий-полимерные батареи</li>
-      <li><strong>Компактные системы охлаждения</strong> — низкопрофильные кулеры и тепловые трубки</li>
-    </ul>
-    <p class="info-text">
-      Многие современные ноутбуки используют несъемные компоненты для уменьшения толщины, что усложняет их апгрейд и ремонт.
-    </p>
+    <h2 class="section-title">📱 Компоненты ноутбуков</h2>
+    
+    <!-- Интерактивный обзор ноутбука -->
+    <div class="laptop-overview">
+        <div class="laptop-visual">
+            <div class="laptop-diagram">
+                <div class="laptop-part cpu-part" data-component="cpu">
+                    <span class="part-label">Процессор</span>
+                </div>
+                <div class="laptop-part ram-part" data-component="ram">
+                    <span class="part-label">Память</span>
+                </div>
+                <div class="laptop-part storage-part" data-component="storage">
+                    <span class="part-label">Накопитель</span>
+                </div>
+                <div class="laptop-part battery-part" data-component="battery">
+                    <span class="part-label">Батарея</span>
+                </div>
+                <div class="laptop-part cooling-part" data-component="cooling">
+                    <span class="part-label">Охлаждение</span>
+                </div>
+            </div>
+        </div>
+        <div class="component-details">
+            <h3>Нажмите на компонент</h3>
+            <p>Выберите компонент на схеме, чтобы узнать подробности</p>
+            <div class="detail-content" id="componentDetail">
+                <div class="default-message">
+                    <span>👆</span>
+                    <p>Наведите курсор или нажмите на компонент ноутбука для получения информации</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <img src="/static/images/laptop-components.jpg" alt="Фото компонентов ноутбука" class="laptop-main-image" />
+    
+    <div class="intro-text">
+        <p class="info-text">
+            <span class="highlight">Ноутбуки</span> содержат те же основные компоненты, что и настольные компьютеры, но в <span class="highlight">компактном форм-факторе</span> с оптимизацией для мобильного использования и энергоэффективности.
+        </p>
+    </div>
+    
+    <!-- Сравнительная таблица форм-факторов -->
+    <div class="form-factor-comparison">
+        <h3><span class="icon">📊</span> Сравнение форм-факторов</h3>
+        <div class="form-factor-grid">
+            <div class="form-factor ultrabook">
+                <div class="factor-icon">💼</div>
+                <h4>Ультрабуки</h4>
+                <ul>
+                    <li>Толщина: 10-18 мм</li>
+                    <li>Вес: 1-1.5 кг</li>
+                    <li>Батарея: 8-12 часов</li>
+                    <li>Апгрейд: Очень сложно</li>
+                </ul>
+            </div>
+            <div class="form-factor gaming">
+                <div class="factor-icon">🎮</div>
+                <h4>Игровые ноутбуки</h4>
+                <ul>
+                    <li>Толщина: 20-30 мм</li>
+                    <li>Вес: 2-3.5 кг</li>
+                    <li>Батарея: 3-6 часов</li>
+                    <li>Апгрейд: Частично возможен</li>
+                </ul>
+            </div>
+            <div class="form-factor workstation">
+                <div class="factor-icon">💻</div>
+                <h4>Рабочие станции</h4>
+                <ul>
+                    <li>Толщина: 25-35 мм</li>
+                    <li>Вес: 2.5-4 кг</li>
+                    <li>Батарея: 4-8 часов</li>
+                    <li>Апгрейд: Относительно прост</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Детали компонентов -->
+    <div class="components-details-grid">
+        <div class="component-card">
+            <div class="card-header cpu-card">
+                <span class="card-icon">⚡</span>
+                <h4>Мобильные процессоры</h4>
+            </div>
+            <div class="card-content">
+                <p><strong>Особенности:</strong></p>
+                <ul>
+                    <li>Оптимизированы для энергоэффективности</li>
+                    <li>Пониженные тактовые частоты</li>
+                    <li>Интегрированная графика</li>
+                    <li>Технологии Turbo Boost</li>
+                </ul>
+                <div class="tech-spec">
+                    <span class="spec-label">Примеры:</span>
+                    <span class="spec-value">Intel Core U/H-серии, AMD Ryzen U/H-серии</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="component-card">
+            <div class="card-header ram-card">
+                <span class="card-icon">🧠</span>
+                <h4>Память SO-DIMM</h4>
+            </div>
+            <div class="card-content">
+                <p><strong>Особенности:</strong></p>
+                <ul>
+                    <li>Размер: примерно вдвое меньше DIMM</li>
+                    <li>204-пиновые разъемы (DDR4)</li>
+                    <li>Более низкое энергопотребление</li>
+                    <li>Часто распаяна на плате</li>
+                </ul>
+                <div class="tech-spec">
+                    <span class="spec-label">Стандарты:</span>
+                    <span class="spec-value">DDR3L, DDR4, DDR5 SO-DIMM</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="component-card">
+            <div class="card-header storage-card">
+                <span class="card-icon">💾</span>
+                <h4>Накопители 2.5" и M.2</h4>
+            </div>
+            <div class="card-content">
+                <p><strong>Особенности:</strong></p>
+                <ul>
+                    <li>2.5" HDD/SSD (7-9.5 мм толщиной)</li>
+                    <li>M.2 SSD (22×80 мм)</li>
+                    <li>NVMe для высокой скорости</li>
+                    <li>SATA для совместимости</li>
+                </ul>
+                <div class="tech-spec">
+                    <span class="spec-label">Емкость:</span>
+                    <span class="spec-value">До 8 ТБ HDD, 4 ТБ SSD</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="component-card">
+            <div class="card-header display-card">
+                <span class="card-icon">🖥️</span>
+                <h4>Интегрированные дисплеи</h4>
+            </div>
+            <div class="card-content">
+                <p><strong>Технологии:</strong></p>
+                <ul>
+                    <li>IPS - лучшие углы обзора</li>
+                    <li>OLED - глубокий черный цвет</li>
+                    <li>TN - быстрый отклик</li>
+                    <li>Частота обновления: 60-360 Гц</li>
+                </ul>
+                <div class="tech-spec">
+                    <span class="spec-label">Разрешение:</span>
+                    <span class="spec-value">HD (1366×768) до 4K (3840×2160)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Особенности ноутбуков -->
+    <div class="laptop-features">
+        <div class="feature-highlight critical-issue">
+            <h3>⚠️ Критическая особенность современных ноутбуков</h3>
+            <div class="feature-content">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-text">
+                    <p><strong>Тенденция к неремонтопригодности:</strong> Многие современные ноутбуки используют несъемные компоненты для уменьшения толщины, что усложняет их апгрейд и ремонт.</p>
+                    <ul>
+                        <li>Распаянная оперативная память</li>
+                        <li>Припаянные процессоры</li>
+                        <li>Встроенные накопители</li>
+                        <li>Сложная разборка</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🔋</div>
+                <h4>Аккумуляторы</h4>
+                <p>Литий-ионные (Li-ion) или литий-полимерные (Li-Po) батареи емкостью 30-100 Вт·ч</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">❄️</div>
+                <h4>Системы охлаждения</h4>
+                <p>Низкопрофильные кулеры, тепловые трубки, пассивное охлаждение в ультрабуках</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">🔌</div>
+                <h4>Порты и разъемы</h4>
+                <p>Ограниченное количество портов, часто требуется док-станция или хабы</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">⚙️</div>
+                <h4>Материалы корпуса</h4>
+                <p>Алюминий, магниевый сплав, карбон, пластик с металлическим покрытием</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Советы по выбору -->
+    <div class="laptop-tips">
+        <h3><span class="icon">💡</span> Советы при выборе ноутбука</h3>
+        <div class="tips-container">
+            <div class="tip">
+                <div class="tip-number">1</div>
+                <p><strong>Определите основные задачи</strong> - офис, игры, дизайн или программирование?</p>
+            </div>
+            <div class="tip">
+                <div class="tip-number">2</div>
+                <p><strong>Проверьте возможность апгрейда</strong> - слоты памяти, отсеки для накопителей</p>
+            </div>
+            <div class="tip">
+                <div class="tip-number">3</div>
+                <p><strong>Оцените систему охлаждения</strong> - особенно для мощных моделей</p>
+            </div>
+            <div class="tip">
+                <div class="tip-number">4</div>
+                <p><strong>Проверьте качество дисплея</strong> - яркость, цветопередачу, углы обзора</p>
+            </div>
+        </div>
+    </div>
   </section>
 
 <footer>
