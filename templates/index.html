@@ -640,25 +640,191 @@
   </section>
 
   <section class="info-section" id="portsInterfacesInfo">
-    <h2>Порты и интерфейсы</h2>
+    <h2>Порты и интерфейсы компьютера</h2>
+    
+    <!-- Визуальное сравнение портов -->
+    <div class="ports-visual-comparison">
+        <div class="port-category">
+            <div class="port-icon legacy-port">🔌</div>
+            <h3>Устаревшие порты</h3>
+            <p>PS/2, Serial (COM), Parallel (LPT)</p>
+        </div>
+        <div class="port-category">
+            <div class="port-icon modern-port">⚡</div>
+            <h3>Современные порты</h3>
+            <p>USB-C, Thunderbolt 4, HDMI 2.1</p>
+        </div>
+    </div>
+    
     <img src="/static/images/ports-interfaces.jpg" alt="Фото компьютерных портов" />
+    
     <p class="info-text">
-      Порты и интерфейсы обеспечивают подключение периферийных устройств к компьютеру. Они различаются по скорости передачи данных, назначению и физическим характеристикам.
+      Порты и интерфейсы обеспечивают подключение периферийных устройств к компьютеру. Они различаются по скорости передачи данных, назначению и физическим характеристикам. 
+      <span class="highlight-text">Каждый порт выполняет специфическую функцию и имеет свои технические характеристики.</span>
     </p>
+    
+    <!-- Сравнительная таблица скоростей -->
+    <div class="comparison-table ports-table">
+        <h3>Сравнение скоростей передачи данных</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Интерфейс</th>
+                    <th>Максимальная скорость</th>
+                    <th>Типичное применение</th>
+                    <th>Год появления</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>USB 2.0</td>
+                    <td>480 Мбит/с</td>
+                    <td>Клавиатуры, мыши, принтеры</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>USB 3.2 Gen 1</td>
+                    <td>5 Гбит/с</td>
+                    <td>Внешние HDD, флешки</td>
+                    <td>2008</td>
+                </tr>
+                <tr>
+                    <td>USB 3.2 Gen 2</td>
+                    <td>10 Гбит/с</td>
+                    <td>SSD накопители, камеры</td>
+                    <td>2013</td>
+                </tr>
+                <tr>
+                    <td>USB4 / Thunderbolt 4</td>
+                    <td>40 Гбит/с</td>
+                    <td>Мониторы 8K, рабочие станции</td>
+                    <td>2019</td>
+                </tr>
+                <tr>
+                    <td>HDMI 2.1</td>
+                    <td>48 Гбит/с</td>
+                    <td>Игровые мониторы, 8K видео</td>
+                    <td>2017</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
     <p class="info-text">
       Основные типы портов и интерфейсов:
     </p>
-    <ul class="info-list">
-      <li><strong>USB (Universal Serial Bus)</strong> — универсальный последовательный интерфейс</li>
-      <li><strong>HDMI, DisplayPort</strong> — для подключения мониторов и телевизоров</li>
-      <li><strong>Ethernet (RJ-45)</strong> — для проводного сетевого подключения</li>
-      <li><strong>Аудиопорты (3.5 мм)</strong> — для подключения наушников и микрофонов</li>
-      <li><strong>Thunderbolt</strong> — высокоскоростной интерфейс от Intel</li>
-      <li><strong>PS/2</strong> — устаревший интерфейс для клавиатур и мышей</li>
-    </ul>
-    <p class="info-text">
-      Современные компьютеры оснащаются USB-C портами, которые поддерживают высокие скорости передачи данных, подачу питания и подключение дисплеев через альтернативные режимы.
-    </p>
+    
+    <div class="ports-grid">
+        <div class="port-card">
+            <div class="port-header usb-port">
+                <span class="port-symbol">🔄</span>
+                <h4>USB (Universal Serial Bus)</h4>
+            </div>
+            <p>Универсальный последовательный интерфейс для подключения периферийных устройств. Современные версии:</p>
+            <ul class="port-features">
+                <li><strong>USB-A:</strong> Классический прямоугольный разъем</li>
+                <li><strong>USB-B:</strong> Для принтеров и сканеров</li>
+                <li><strong>USB-C:</strong> Симметричный, двусторонний разъем</li>
+                <li><strong>Micro-USB:</strong> Для мобильных устройств (устаревающий)</li>
+            </ul>
+        </div>
+        
+        <div class="port-card">
+            <div class="port-header video-port">
+                <span class="port-symbol">🖥️</span>
+                <h4>Видеоинтерфейсы</h4>
+            </div>
+            <p>Для передачи видео и аудиосигналов:</p>
+            <ul class="port-features">
+                <li><strong>HDMI:</strong> Цифровой интерфейс для ТВ и мониторов</li>
+                <li><strong>DisplayPort:</strong> Предпочтителен для ПК и игровых мониторов</li>
+                <li><strong>VGA:</strong> Аналоговый интерфейс (устаревший)</li>
+                <li><strong>DVI:</strong> Цифровой интерфейс (устаревающий)</li>
+            </ul>
+        </div>
+        
+        <div class="port-card">
+            <div class="port-header network-port">
+                <span class="port-symbol">🌐</span>
+                <h4>Сетевые интерфейсы</h4>
+            </div>
+            <p>Для подключения к локальным и глобальным сетям:</p>
+            <ul class="port-features">
+                <li><strong>Ethernet (RJ-45):</strong> Проводное сетевое подключение</li>
+                <li><strong>Wi-Fi:</strong> Беспроводное подключение (IEEE 802.11)</li>
+                <li><strong>Bluetooth:</strong> Для беспроводных периферийных устройств</li>
+            </ul>
+        </div>
+        
+        <div class="port-card">
+            <div class="port-header audio-port">
+                <span class="port-symbol">🎧</span>
+                <h4>Аудиоинтерфейсы</h4>
+            </div>
+            <p>Для передачи аудиосигналов:</p>
+            <ul class="port-features">
+                <li><strong>3.5 мм Jack:</strong> Для наушников и микрофонов</li>
+                <li><strong>Optical (TOSLINK):</strong> Цифровой оптический аудио</li>
+                <li><strong>S/PDIF:</strong> Цифровой коаксиальный аудио</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="info-box usb-c-info">
+        <h3>🔌 USB-C - универсальный интерфейс будущего</h3>
+        <p>USB-C (Type-C) стал стандартом для современных устройств благодаря:</p>
+        <ul>
+            <li><strong>Симметричность:</strong> Разъем можно вставлять любой стороной</li>
+            <li><strong>Многофункциональность:</strong> Передача данных, видео, аудио и питания</li>
+            <li><strong>Высокая скорость:</strong> Поддержка USB4 до 40 Гбит/с</li>
+            <li><strong>Мощность:</strong> Поддержка Power Delivery до 240 Вт</li>
+            <li><strong>Альтернативные режимы:</strong> DisplayPort, Thunderbolt, HDMI</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box ports-tips">
+        <h3>⚠️ Важные особенности и советы</h3>
+        <ul>
+            <li><strong>Обратная совместимость:</strong> Новые версии USB обычно совместимы со старыми устройствами через переходники</li>
+            <li><strong>Thunderbolt:</strong> Thunderbolt 3 и 4 используют разъем USB-C, но не все порты USB-C поддерживают Thunderbolt</li>
+            <li><strong>Маркировка:</strong> Обращайте внимание на маркировку портов (SS, SuperSpeed, Thunderbolt)</li>
+            <li><strong>Длина кабеля:</strong> Чем выше скорость интерфейса, тем короче должен быть кабель для стабильной работы</li>
+            <li><strong>Адаптеры и док-станции:</strong> Решают проблему недостатка портов на современных тонких ноутбуках</li>
+        </ul>
+    </div>
+    
+    <div class="tech-specs">
+        <h3>📊 Технические характеристики интерфейсов</h3>
+        <div class="spec-grid">
+            <div class="spec-item">
+                <h4>Пропускная способность</h4>
+                <p>Определяет максимальную скорость передачи данных. Важна для внешних накопителей и видеокарт.</p>
+            </div>
+            <div class="spec-item">
+                <h4>Максимальная длина кабеля</h4>
+                <p>USB 2.0: 5м, USB 3.x: 3м, HDMI: до 15м, Ethernet: до 100м</p>
+            </div>
+            <div class="spec-item">
+                <h4>Максимальная мощность</h4>
+                <p>USB 2.0: 2.5Вт, USB-C PD: до 240Вт, Thunderbolt 4: до 100Вт</p>
+            </div>
+            <div class="spec-item">
+                <h4>Поддержка видео</h4>
+                <p>Некоторые интерфейсы (USB-C, Thunderbolt) поддерживают передачу видео через альтернативные режимы.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="future-tech">
+        <h3>🚀 Перспективные технологии</h3>
+        <ul>
+            <li><strong>USB4 v2.0:</strong> До 80 Гбит/с асимметричной передачи</li>
+            <li><strong>HDMI 2.1a:</strong> Поддержка Source-Based Tone Mapping</li>
+            <li><strong>DisplayPort 2.1:</strong> Улучшенная поддержка высоких разрешений</li>
+            <li><strong>Wi-Fi 7 (802.11be):</strong> До 40 Гбит/с беспроводной передачи</li>
+            <li><strong>Беспроводные интерфейсы:</strong> Развитие технологий Wireless USB и беспроводного HDMI</li>
+        </ul>
+    </div>
   </section>
 
 <footer>
