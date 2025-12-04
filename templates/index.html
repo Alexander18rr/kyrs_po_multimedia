@@ -1061,25 +1061,306 @@
   </section>
 
   <section class="info-section" id="serverComponentsInfo">
-    <h2>Серверные компоненты</h2>
-    <img src="/static/images/server-components.jpg" alt="Фото серверных компонентов" />
-    <p class="info-text">
-      Серверные компоненты оптимизированы для работы в условиях постоянной нагрузки, высокой надежности и масштабируемости.
-    </p>
-    <p class="info-text">
-      Особенности серверных компонентов:
-    </p>
-    <ul class="info-list">
-      <li><strong>Серверные процессоры</strong> — многоядерные CPU с поддержкой ECC-памяти</li>
-      <li><strong>Память с коррекцией ошибок (ECC)</strong> — обнаруживает и исправляет ошибки</li>
-      <li><strong>RAID-контроллеры</strong> — для организации отказоустойчивых массивов дисков</li>
-      <li><strong>Сетевые адаптеры</strong> — многопортовые гигабитные и 10GbE карты</li>
-      <li><strong>Редундантные блоки питания</strong> — несколько БП для обеспечения бесперебойной работы</li>
-      <li><strong>Системы удаленного управления</strong> — iDRAC, iLO, IPMI</li>
-    </ul>
-    <p class="info-text">
-      Серверные компоненты обычно имеют более длительный срок службы и лучшее качество изготовления по сравнению с потребительскими аналогами.
-    </p>
+    <h2 class="section-title">🖥️ Серверные компоненты</h2>
+    
+    <!-- Интерактивная стойка сервера -->
+    <div class="server-rack-container">
+        <h3 class="rack-title"><span class="icon">📊</span> Типичная серверная стойка 42U</h3>
+        <div class="server-rack">
+            <div class="rack-units">
+                <!-- Блоки серверной стойки -->
+                <div class="rack-unit unit-42" data-unit="patch-panel">42U: Патч-панели</div>
+                <div class="rack-unit unit-40" data-unit="switch">40U: Коммутаторы</div>
+                <div class="rack-unit unit-36" data-unit="servers">36U: Серверы 1U-4U</div>
+                <div class="rack-unit unit-30" data-unit="storage">30U: Системы хранения</div>
+                <div class="rack-unit unit-24" data-unit="ups">24U: ИБП</div>
+                <div class="rack-unit unit-20" data-unit="kvm">20U: KVM-переключатели</div>
+                <div class="rack-unit unit-16" data-unit="backup">16U: Резервные серверы</div>
+                <div class="rack-unit unit-10" data-unit="security">10U: Системы безопасности</div>
+                <div class="rack-unit unit-4" data-unit="management">4U: Системы управления</div>
+                <div class="rack-unit unit-1" data-unit="pdu">1U: Блоки распределения питания</div>
+            </div>
+            <div class="rack-details">
+                <h4>Выберите уровень стойки</h4>
+                <div class="detail-content" id="rackDetail">
+                    <div class="default-rack-message">
+                        <span>👆</span>
+                        <p>Нажмите на уровень серверной стойки для получения информации</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <img src="/static/images/server-components.jpg" alt="Фото серверных компонентов" class="server-main-image" />
+    
+    <div class="server-intro">
+        <p class="info-text">
+            Серверные компоненты оптимизированы для работы в условиях <span class="highlight">постоянной нагрузки 24/7</span>, высокой надежности и масштабируемости. Они отличаются от потребительских решений улучшенным качеством изготовления и дополнительными функциями.
+        </p>
+    </div>
+    
+    <!-- Сравнение серверных и десктопных решений -->
+    <div class="comparison-section">
+        <h3><span class="icon">⚖️</span> Сравнение: Серверные vs Десктопные компоненты</h3>
+        <div class="comparison-grid">
+            <div class="comparison-card server-side">
+                <div class="comparison-header">
+                    <span class="comparison-icon">🏢</span>
+                    <h4>Серверные компоненты</h4>
+                </div>
+                <ul>
+                    <li><strong>Работа 24/7:</strong> Рассчитаны на непрерывную работу</li>
+                    <li><strong>ECC-память:</strong> Коррекция ошибок в реальном времени</li>
+                    <li><strong>IPMI/iDRAC:</strong> Удаленное управление</li>
+                    <li><strong>Горячая замена:</strong> Компоненты меняются без выключения</li>
+                    <li><strong>Долгий срок службы:</strong> 5-7+ лет гарантии</li>
+                    <li><strong>Редундантность:</strong> Дублирование критических компонентов</li>
+                </ul>
+            </div>
+            
+            <div class="comparison-card desktop-side">
+                <div class="comparison-header">
+                    <span class="comparison-icon">🏠</span>
+                    <h4>Десктопные компоненты</h4>
+                </div>
+                <ul>
+                    <li><strong>8-10 часов/день:</strong> Периодическая нагрузка</li>
+                    <li><strong>Обычная память:</strong> Без коррекции ошибок</li>
+                    <li><strong>Локальное управление:</strong> Требуется физический доступ</li>
+                    <li><strong>Требуется отключение:</strong> Для замены компонентов</li>
+                    <li><strong>Срок службы:</strong> 2-3 года гарантии</li>
+                    <li><strong>Минимум дублирования:</strong> Одиночные компоненты</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ключевые серверные компоненты -->
+    <div class="server-components-grid">
+        <h3><span class="icon">🔧</span> Ключевые серверные компоненты</h3>
+        
+        <div class="server-component-card">
+            <div class="component-header">
+                <span class="component-icon cpu-icon">⚡</span>
+                <h4>Серверные процессоры</h4>
+            </div>
+            <div class="component-content">
+                <p class="component-desc">Многоядерные CPU с поддержкой технологий виртуализации и ECC-памяти</p>
+                <div class="component-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Производители:</span>
+                        <span class="spec-value">Intel Xeon, AMD EPYC</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Ядра:</span>
+                        <span class="spec-value">До 128 ядер на сокет</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Память:</span>
+                        <span class="spec-value">До 6 ТБ DDR4/5 с ECC</span>
+                    </div>
+                </div>
+                <div class="component-features">
+                    <span class="feature-tag">VT-x/AMD-V</span>
+                    <span class="feature-tag">AVX-512</span>
+                    <span class="feature-tag">SGX</span>
+                    <span class="feature-tag">TSX</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="server-component-card">
+            <div class="component-header">
+                <span class="component-icon memory-icon">🧠</span>
+                <h4>Память с ECC</h4>
+            </div>
+            <div class="component-content">
+                <p class="component-desc">Error-Correcting Code память обнаруживает и исправляет ошибки</p>
+                <div class="component-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Типы ошибок:</span>
+                        <span class="spec-value">Single-bit, Multi-bit</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Коррекция:</span>
+                        <span class="spec-value">В реальном времени</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Надежность:</span>
+                        <span class="spec-value">99.999% доступности</span>
+                    </div>
+                </div>
+                <div class="component-features">
+                    <span class="feature-tag">Registered DIMM</span>
+                    <span class="feature-tag">LRDIMM</span>
+                    <span class="feature-tag">3DS</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="server-component-card">
+            <div class="component-header">
+                <span class="component-icon storage-icon">💾</span>
+                <h4>RAID-массивы</h4>
+            </div>
+            <div class="component-content">
+                <p class="component-desc">Отказоустойчивые массивы дисков с аппаратными контроллерами</p>
+                <div class="component-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Уровни RAID:</span>
+                        <span class="spec-value">0, 1, 5, 6, 10, 50, 60</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Кэш:</span>
+                        <span class="spec-value">До 8 ГБ с защитой</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Восстановление:</span>
+                        <span class="spec-value">Горячая замена дисков</span>
+                    </div>
+                </div>
+                <div class="component-features">
+                    <span class="feature-tag">BBU</span>
+                    <span class="feature-tag">CacheVault</span>
+                    <span class="feature-tag">SAS 12Gb/s</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="server-component-card">
+            <div class="component-header">
+                <span class="component-icon network-icon">🌐</span>
+                <h4>Сетевые адаптеры</h4>
+            </div>
+            <div class="component-content">
+                <p class="component-desc">Высокопроизводительные сетевые интерфейсы с аппаратным ускорением</p>
+                <div class="component-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Скорость:</span>
+                        <span class="spec-value">10/25/40/100 GbE</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Порты:</span>
+                        <span class="spec-value">До 4 портов на карту</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Технологии:</span>
+                        <span class="spec-value">SR-IOV, RDMA, TCP Offload</span>
+                    </div>
+                </div>
+                <div class="component-features">
+                    <span class="feature-tag">iSCSI</span>
+                    <span class="feature-tag">FCoE</span>
+                    <span class="feature-tag">TOE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Уровни серверов -->
+    <div class="server-tiers">
+        <h3><span class="icon">📈</span> Уровни серверов</h3>
+        <div class="tiers-container">
+            <div class="tier-card entry-level">
+                <div class="tier-header">
+                    <h4>Начальный уровень</h4>
+                    <div class="tier-price">$1,000 - $5,000</div>
+                </div>
+                <ul>
+                    <li>1-2 процессора</li>
+                    <li>32-128 ГБ RAM</li>
+                    <li>4-8 дисковых отсеков</li>
+                    <li>Базовый RAID</li>
+                    <li>Для малого бизнеса</li>
+                </ul>
+                <div class="tier-usage">SMB, файловый сервер, печать</div>
+            </div>
+            
+            <div class="tier-card mid-range">
+                <div class="tier-header">
+                    <h4>Средний уровень</h4>
+                    <div class="tier-price">$5,000 - $20,000</div>
+                </div>
+                <ul>
+                    <li>2-4 процессора</li>
+                    <li>128-512 ГБ RAM</li>
+                    <li>12-24 дисковых отсеков</li>
+                    <li>Аппаратный RAID</li>
+                    <li>Для среднего бизнеса</li>
+                </ul>
+                <div class="tier-usage">Виртуализация, БД, веб-серверы</div>
+            </div>
+            
+            <div class="tier-card enterprise">
+                <div class="tier-header">
+                    <h4>Предприятий уровень</h4>
+                    <div class="tier-price">$20,000+</div>
+                </div>
+                <ul>
+                    <li>4-8 процессоров</li>
+                    <li>512 ГБ - 6 ТБ RAM</li>
+                    <li>24+ дисковых отсеков</li>
+                    <li>Аппаратное резервирование</li>
+                    <li>Для крупных организаций</li>
+                </ul>
+                <div class="tier-usage">ERP, Big Data, HPC, облачные платформы</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Критические технологии -->
+    <div class="critical-tech">
+        <h3><span class="icon">⚠️</span> Критические серверные технологии</h3>
+        <div class="tech-grid">
+            <div class="tech-item">
+                <div class="tech-icon">🔌</div>
+                <h4>Редундантные БП</h4>
+                <p>Несколько блоков питания с горячей заменой и автоматическим переключением</p>
+            </div>
+            
+            <div class="tech-item">
+                <div class="tech-icon">🔄</div>
+                <h4>Горячая замена</h4>
+                <p>Диски, вентиляторы, БП заменяются без остановки сервера</p>
+            </div>
+            
+            <div class="tech-item">
+                <div class="tech-icon">📡</div>
+                <h4>Удаленное управление</h4>
+                <p>iDRAC, iLO, IPMI для мониторинга и управления без ОС</p>
+            </div>
+            
+            <div class="tech-item">
+                <div class="tech-icon">🛡️</div>
+                <h4>Прогностика отказов</h4>
+                <p>Предсказание сбоев компонентов на основе телеметрии</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Современные тренды -->
+    <div class="server-trends">
+        <h3><span class="icon">🚀</span> Современные тренды в серверных технологиях</h3>
+        <div class="trends-list">
+            <div class="trend-item">
+                <h4>Жидкостное охлаждение</h4>
+                <p>Для высокопроизводительных вычислений и энергоэффективности</p>
+            </div>
+            <div class="trend-item">
+                <h4>Композитные серверы</h4>
+                <p>Дис-агрегированные архитектуры (вычислительные, сетевые, хранилища отдельно)</p>
+            </div>
+            <div class="trend-item">
+                <h4>Энергоэффективность</h4>
+                <p>PUE < 1.2, использование альтернативных источников энергии</p>
+            </div>
+            <div class="trend-item">
+                <h4>Программно-определяемые серверы</h4>
+                <p>SDx (Software-Defined Everything) для гибкости управления</p>
+            </div>
+        </div>
+    </div>
   </section>
 
 <footer>
