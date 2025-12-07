@@ -6278,3 +6278,783 @@ footer {
     background: #a8a8a8;
 }
 
+
+
+/* Стили для секции эволюции запоминающих устройств */
+#storageEvolutionInfo {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f9 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Хронология развития */
+.storage-timeline {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.storage-timeline h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.timeline-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #7950f2, #5f3dc4);
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #4dabf7, #20c997, #fa5252);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: white;
+    border: 3px solid;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item[data-year="1956"] .timeline-marker { border-color: #4dabf7; }
+.timeline-item[data-year="1971"] .timeline-marker { border-color: #339af0; }
+.timeline-item[data-year="1980"] .timeline-marker { border-color: #20c997; }
+.timeline-item[data-year="1991"] .timeline-marker { border-color: #51cf66; }
+.timeline-item[data-year="2000"] .timeline-marker { border-color: #ffd43b; }
+.timeline-item[data-year="2010"] .timeline-marker { border-color: #ff922b; }
+.timeline-item[data-year="2025"] .timeline-marker { border-color: #fa5252; }
+
+.timeline-item::before {
+    content: attr(data-year);
+    position: absolute;
+    left: -4rem;
+    top: 0;
+    background: #495057;
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.timeline-content {
+    background: #f8f9fa;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-left: 4px solid;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item[data-year="1956"] .timeline-content { border-color: #4dabf7; background: #e7f5ff; }
+.timeline-item[data-year="1971"] .timeline-content { border-color: #339af0; background: #d0ebff; }
+.timeline-item[data-year="1980"] .timeline-content { border-color: #20c997; background: #d3f9d8; }
+.timeline-item[data-year="1991"] .timeline-content { border-color: #51cf66; background: #ebfbee; }
+.timeline-item[data-year="2000"] .timeline-content { border-color: #ffd43b; background: #fff9db; }
+.timeline-item[data-year="2010"] .timeline-content { border-color: #ff922b; background: #fff4e6; }
+.timeline-item[data-year="2025"] .timeline-content { border-color: #fa5252; background: #ffe3e3; }
+
+.timeline-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #495057;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Изображение */
+#storageEvolutionInfo img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 3px solid white;
+}
+
+/* Технологии магнитного хранения */
+.magnetic-storage {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.magnetic-storage h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.magnet-icon {
+    font-size: 1.5rem;
+    background: #fa5252;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.tech-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.tech-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 4px solid #4dabf7;
+}
+
+.tech-card:nth-child(2) {
+    border-color: #7950f2;
+}
+
+.tech-card h4 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.tech-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: white;
+    border-radius: 6px;
+    border-left: 3px solid #20c997;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.spec-value {
+    color: #1971c2;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.tech-advances h5 {
+    color: #2c3e50;
+    margin: 1.5rem 0 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+.tech-advances ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.tech-advances li {
+    margin-bottom: 0.5rem;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.tech-card p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 1rem 0 0 0;
+}
+
+/* Полупроводниковые накопители */
+.semiconductor-storage {
+    margin: 2.5rem 0;
+}
+
+.semiconductor-storage h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.chip-icon {
+    font-size: 1.5rem;
+    background: #20c997;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.ssd-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.ssd-type {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+}
+
+.ssd-header {
+    background: linear-gradient(135deg, #495057, #343a40);
+    color: white;
+    padding: 1.2rem 1.5rem;
+}
+
+.ssd-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.ssd-content {
+    padding: 1.5rem;
+}
+
+.memory-type, .form-factor {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed #dee2e6;
+}
+
+.memory-type:last-child, .form-factor:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.memory-type h5, .form-factor h5 {
+    margin: 0 0 0.8rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.form-factor p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.memory-type ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.memory-type li {
+    margin-bottom: 0.5rem;
+    color: #495057;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.memory-type li strong {
+    color: #2c3e50;
+    margin-right: 0.5rem;
+}
+
+/* Оптические носители */
+.optical-storage {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.optical-storage h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.disc-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #7950f2, #5f3dc4);
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.optical-evolution {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.optical-generation {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 4px solid;
+    transition: transform 0.3s ease;
+}
+
+.optical-generation:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.optical-generation:nth-child(1) { border-color: #4dabf7; }
+.optical-generation:nth-child(2) { border-color: #20c997; }
+.optical-generation:nth-child(3) { border-color: #fa5252; }
+
+.gen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.gen-header h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.gen-year {
+    background: #495057;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.optical-generation ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.optical-generation li {
+    margin-bottom: 0.6rem;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.optical-generation li strong {
+    color: #2c3e50;
+    margin-right: 0.3rem;
+}
+
+/* Современные технологии хранения */
+.modern-storage-tech {
+    margin: 2.5rem 0;
+}
+
+.modern-storage-tech h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.modern-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #fa5252, #e03131);
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.modern-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.tech-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.tech-item:hover {
+    border-color: #4dabf7;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(77, 171, 247, 0.15);
+}
+
+.tech-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.tech-item h4 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.tech-item p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.stat {
+    background: #e7f5ff;
+    color: #1971c2;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Будущие технологии */
+.future-storage {
+    background: linear-gradient(135deg, #2c3e50, #1a252f);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+}
+
+.future-storage h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.future-icon {
+    font-size: 1.5rem;
+    background: #7950f2;
+    padding: 0.3rem;
+    border-radius: 8px;
+}
+
+.future-tech-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.future-tech-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.future-tech-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.future-tech-item h4 {
+    margin: 0 0 1rem 0;
+    color: white;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #7950f2;
+    padding-bottom: 0.5rem;
+}
+
+.future-tech-item p {
+    color: #e9ecef;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.tech-status {
+    margin-top: 1rem;
+}
+
+.status {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status.experimental { background: #ffd43b; color: #2c3e50; }
+.status.research { background: #20c997; color: white; }
+.status.theoretical { background: #4dabf7; color: white; }
+.status.development { background: #fa5252; color: white; }
+
+/* Сравнение технологий */
+.storage-comparison {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.storage-comparison h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.compare-icon {
+    font-size: 1.5rem;
+    background: #20c997;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-table th {
+    background: linear-gradient(135deg, #495057, #343a40);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-table th:last-child {
+    border-right: none;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+    color: #495057;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.comparison-table tbody tr:hover {
+    background-color: #e7f5ff;
+}
+
+.comparison-table td:first-child {
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: left;
+}
+
+/* Заключение */
+.storage-conclusion {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #e7f5ff, #d0ebff);
+    border-radius: 10px;
+    border-left: 4px solid #1971c2;
+}
+
+.highlight {
+    color: #1971c2;
+    font-weight: 600;
+    background: rgba(25, 113, 194, 0.1);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+}
+
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #495057;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #storageEvolutionInfo {
+        padding: 1rem;
+    }
+    
+    .tech-details,
+    .ssd-types,
+    .optical-evolution,
+    .modern-tech-grid,
+    .future-tech-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-item::before {
+        position: relative;
+        left: 0;
+        top: auto;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+    
+    .timeline-marker {
+        left: -1.1rem;
+    }
+    
+    .comparison-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-specs .spec {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    .timeline-content {
+        padding: 1rem;
+    }
+    
+    .optical-generation {
+        padding: 1rem;
+    }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-item,
+.tech-card,
+.ssd-type,
+.optical-generation,
+.tech-item,
+.future-tech-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.timeline-item:nth-child(2) { animation-delay: 0.1s; }
+.timeline-item:nth-child(3) { animation-delay: 0.2s; }
+.timeline-item:nth-child(4) { animation-delay: 0.3s; }
+.timeline-item:nth-child(5) { animation-delay: 0.4s; }
+.timeline-item:nth-child(6) { animation-delay: 0.5s; }
+.timeline-item:nth-child(7) { animation-delay: 0.6s; }
+
+/* Кастомный скроллбар для таблицы */
+.comparison-table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.comparison-table::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.comparison-table::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.comparison-table::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
