@@ -2314,6 +2314,41 @@
         </div>
     </div>
 
+    <!-- Компоненты для перетаскивания -->
+    <div style="margin-bottom: 25px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h4 style="margin: 0 0 20px 0; color: #2c3e50; text-align: center;">Доступные компоненты:</h4>
+        <div id="components" style="display: flex; gap: 25px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;">
+            <div style="text-align: center;">
+                <img src="/static/images/io.png" alt="Устройства ввода/вывода" draggable="true" id="io" class="component-icon" style="width: 80px; height: 80px; object-fit: contain; cursor: grab;">
+                <p style="margin: 10px 0 0 0; font-size: 14px; color: #2c3e50; font-weight: bold;">Периферия</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="/static/images/operativka_icons.png" alt="Оперативная память" draggable="true" id="ram" class="component-icon" style="width: 80px; height: 80px; object-fit: contain; cursor: grab;">
+                <p style="margin: 10px 0 0 0; font-size: 14px; color: #2c3e50; font-weight: bold;">Оперативная память</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="/static/images/ssd.png" alt="Запоминающие устройства" draggable="true" id="storage" class="component-icon" style="width: 80px; height: 80px; object-fit: contain; cursor: grab;">
+                <p style="margin: 10px 0 0 0; font-size: 14px; color: #2c3e50; font-weight: bold;">Накопители</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="/static/images/process.png" alt="Процессор" draggable="true" id="cpu" class="component-icon" style="width: 80px; height: 80px; object-fit: contain; cursor: grab;">
+                <p style="margin: 10px 0 0 0; font-size: 14px; color: #2c3e50; font-weight: bold;">Процессор</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="/static/images/video.png" alt="Видеокарта" draggable="true" id="video" class="component-icon" style="width: 80px; height: 80px; object-fit: contain; cursor: grab;">
+                <p style="margin: 10px 0 0 0; font-size: 14px; color: #2c3e50; font-weight: bold;">Видеокарта</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Область сборки -->
+    <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h4 style="margin: 0 0 20px 0; color: #2c3e50; text-align: center;">Область сборки:</h4>
+        <div id="assembly-area" style="min-height: 120px; border: 2px dashed #888; border-radius: 10px; padding: 10px; display: flex; gap: 10px; justify-content: center; align-items: center; background: #f8f9fa;">
+            <span>Перетащите элементы сюда</span>
+        </div>
+    </div>
+
     
 </section>
 
