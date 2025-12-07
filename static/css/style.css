@@ -7058,3 +7058,763 @@ footer {
     background: #a8a8a8;
 }
 
+
+/* Стили для секции графической обработки */
+#graphicsProcessingInfo {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #0c0c1d 0%, #1a1a2e 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 255, 0.1);
+    color: #e0e0ff;
+}
+
+/* Эволюция GPU */
+.gpu-evolution {
+    background: linear-gradient(135deg, #1e1e3f, #2d2d5c);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(77, 171, 247, 0.2);
+}
+
+.gpu-evolution h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.evolution-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #4dabf7, #339af0);
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.evolution-stages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.stage {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1.2rem;
+    border: 1px solid rgba(77, 171, 247, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stage:hover {
+    transform: translateY(-5px);
+    border-color: #4dabf7;
+    box-shadow: 0 8px 25px rgba(77, 171, 247, 0.2);
+    background: rgba(77, 171, 247, 0.05);
+}
+
+.stage-year {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #7950f2;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.stage-content {
+    margin-top: 0.5rem;
+}
+
+.stage-content h4 {
+    margin: 0.5rem 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+    min-height: 2.8rem;
+}
+
+.stage-content p {
+    color: #b3b3ff;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Изображение */
+#graphicsProcessingInfo img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(77, 171, 247, 0.3);
+}
+
+/* Архитектура GPU */
+.gpu-architecture {
+    margin: 2.5rem 0;
+}
+
+.gpu-architecture h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.architecture-icon {
+    font-size: 1.5rem;
+    background: #20c997;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.architecture-components {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.component {
+    background: linear-gradient(135deg, rgba(30, 30, 63, 0.8), rgba(45, 45, 92, 0.8));
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(32, 201, 151, 0.2);
+    transition: all 0.3s ease;
+}
+
+.component:hover {
+    transform: translateY(-5px);
+    border-color: #20c997;
+    box-shadow: 0 8px 25px rgba(32, 201, 151, 0.2);
+}
+
+.component-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: rgba(32, 201, 151, 0.1);
+    border-bottom: 1px solid rgba(32, 201, 151, 0.2);
+}
+
+.component-icon {
+    font-size: 1.8rem;
+    background: #20c997;
+    padding: 0.4rem;
+    border-radius: 8px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-header h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.component-content {
+    padding: 1.5rem;
+}
+
+.component-content p {
+    color: #b3b3ff;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+.component-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 3px solid #20c997;
+}
+
+.spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spec-label {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.spec-value {
+    color: #4dabf7;
+    font-size: 0.9rem;
+    text-align: right;
+    max-width: 60%;
+}
+
+/* Технологии рендеринга */
+.rendering-tech {
+    background: linear-gradient(135deg, #2d2d5c, #3d3d7c);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.rendering-tech h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.rendering-icon {
+    font-size: 1.5rem;
+    background: #ff6b6b;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.rendering-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.method {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.method:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.method-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    background: rgba(255, 107, 107, 0.1);
+    border-bottom: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.method-header h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.method-type {
+    background: #ff6b6b;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.method-content {
+    padding: 1.5rem;
+}
+
+.method-content p {
+    color: #b3b3ff;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.method-content ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.method-content li {
+    margin-bottom: 0.6rem;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.method-content li strong {
+    color: #4dabf7;
+    margin-right: 0.3rem;
+}
+
+/* Графические API */
+.graphics-api {
+    margin: 2.5rem 0;
+}
+
+.graphics-api h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.api-icon {
+    font-size: 1.5rem;
+    background: #7950f2;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.api-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.api-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.api-card:hover {
+    transform: translateY(-5px);
+    border-color: #7950f2;
+    box-shadow: 0 8px 25px rgba(121, 80, 242, 0.2);
+}
+
+.api-header {
+    padding: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+.api-header.directx {
+    background: linear-gradient(135deg, #0066b8, #0078d7);
+}
+
+.api-header.opengl {
+    background: linear-gradient(135deg, #5586a4, #6ba5d3);
+}
+
+.api-header.metal {
+    background: linear-gradient(135deg, #333333, #666666);
+}
+
+.api-header h4 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.api-content {
+    padding: 1.5rem;
+}
+
+.api-content p {
+    color: #b3b3ff;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.api-content p strong {
+    color: #ffffff;
+}
+
+.api-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature {
+    background: rgba(77, 171, 247, 0.2);
+    color: #4dabf7;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Видеопамять */
+.gpu-memory {
+    background: linear-gradient(135deg, #1e1e3f, #2d2d5c);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.gpu-memory h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.memory-icon {
+    font-size: 1.5rem;
+    background: #ffc107;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: #2c3e50;
+}
+
+.memory-tech {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.memory-type h4,
+.memory-features h4 {
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #ffc107;
+    padding-bottom: 0.5rem;
+}
+
+.memory-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.mem-type {
+    background: rgba(255, 193, 7, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.mem-type h5 {
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.mem-type p {
+    color: #b3b3ff;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.memory-features ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.memory-features li {
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.memory-features li strong {
+    color: #ffc107;
+    margin-right: 0.3rem;
+}
+
+/* Профессиональные GPU */
+.professional-gpu {
+    margin: 2.5rem 0;
+}
+
+.professional-gpu h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.pro-icon {
+    font-size: 1.5rem;
+    background: #20c997;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.pro-gpu-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.pro-series {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(32, 201, 151, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pro-series:hover {
+    transform: translateY(-5px);
+    border-color: #20c997;
+    box-shadow: 0 8px 25px rgba(32, 201, 151, 0.2);
+}
+
+.series-header {
+    padding: 1.2rem;
+    background: rgba(32, 201, 151, 0.1);
+    border-bottom: 1px solid rgba(32, 201, 151, 0.2);
+}
+
+.series-header h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.series-content {
+    padding: 1.5rem;
+}
+
+.series-content > p {
+    color: #20c997;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.series-content ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.series-content li {
+    margin-bottom: 0.8rem;
+    color: #b3b3ff;
+    line-height: 1.5;
+}
+
+/* Будущее графики */
+.graphics-future {
+    background: linear-gradient(135deg, rgba(121, 80, 242, 0.2), rgba(32, 201, 151, 0.2));
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(121, 80, 242, 0.3);
+}
+
+.graphics-future h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.future-icon {
+    font-size: 1.5rem;
+    background: #7950f2;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.future-trends {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.trend {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.trend:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #7950f2;
+}
+
+.trend-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.trend h4 {
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+    min-height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trend p {
+    color: #b3b3ff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Заключение */
+.gpu-conclusion {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(77, 171, 247, 0.1), rgba(32, 201, 151, 0.1));
+    border-radius: 10px;
+    border-left: 4px solid #4dabf7;
+}
+
+.highlight {
+    color: #4dabf7;
+    font-weight: 600;
+    background: rgba(77, 171, 247, 0.1);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+}
+
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #graphicsProcessingInfo {
+        padding: 1rem;
+    }
+    
+    .evolution-stages {
+        flex-direction: column;
+    }
+    
+    .stage {
+        min-width: 100%;
+    }
+    
+    .architecture-components,
+    .rendering-methods,
+    .api-comparison,
+    .memory-tech,
+    .pro-gpu-comparison,
+    .future-trends {
+        grid-template-columns: 1fr;
+    }
+    
+    .memory-types-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .component-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .spec {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    .stage-year {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+}
+
+/* Анимации */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(77, 171, 247, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(77, 171, 247, 0.8);
+    }
+}
+
+.component,
+.method,
+.api-card,
+.pro-series,
+.trend {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.stage:nth-child(2) { animation-delay: 0.1s; }
+.stage:nth-child(3) { animation-delay: 0.2s; }
+.stage:nth-child(4) { animation-delay: 0.3s; }
+.stage:nth-child(5) { animation-delay: 0.4s; }
+
+/* Эффект свечения для важных элементов */
+.highlight {
+    animation: glowPulse 2s infinite;
+}
+
+/* Кастомный скроллбар */
+#graphicsProcessingInfo::-webkit-scrollbar {
+    width: 10px;
+}
+
+#graphicsProcessingInfo::-webkit-scrollbar-track {
+    background: rgba(30, 30, 63, 0.5);
+    border-radius: 5px;
+}
+
+#graphicsProcessingInfo::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4dabf7, #7950f2);
+    border-radius: 5px;
+}
+
+#graphicsProcessingInfo::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #339af0, #5f3dc4);
+}
+
