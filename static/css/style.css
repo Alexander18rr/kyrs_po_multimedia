@@ -11270,3 +11270,925 @@ footer {
 #embeddedsystemsInfo::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #0052a3, #007a3d);
 }
+
+/* Стили для секции IoT платформ */
+#iotPlatformsInfo {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #e6f7ff 0%, #d1f0ff 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 150, 255, 0.1);
+}
+
+/* Архитектура IoT платформ */
+.iot-architecture {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 150, 255, 0.05);
+    border: 1px solid #b3e0ff;
+}
+
+.iot-architecture h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #0088cc;
+    font-size: 1.4rem;
+}
+
+.architecture-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #0088cc, #00aaff);
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.architecture-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.architecture-layers::before {
+    content: '';
+    position: absolute;
+    left: 0.7rem;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #0088cc, #00cc88, #ffaa00, #ff6688);
+    border-radius: 2px;
+}
+
+.layer {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: #f0faff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.layer:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 150, 255, 0.15);
+}
+
+.layer:nth-child(1) { border-color: #0088cc; }
+.layer:nth-child(2) { border-color: #00cc88; }
+.layer:nth-child(3) { border-color: #ffaa00; }
+.layer:nth-child(4) { border-color: #ff6688; }
+
+.layer-number {
+    background: #0088cc;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.layer:nth-child(1) .layer-number { background: #0088cc; }
+.layer:nth-child(2) .layer-number { background: #00cc88; }
+.layer:nth-child(3) .layer-number { background: #ffaa00; }
+.layer:nth-child(4) .layer-number { background: #ff6688; }
+
+.layer-content h4 {
+    margin: 0 0 1rem 0;
+    color: #0088cc;
+    font-size: 1.2rem;
+}
+
+.layer:nth-child(2) .layer-content h4 { color: #00cc88; }
+.layer:nth-child(3) .layer-content h4 { color: #ffaa00; }
+.layer:nth-child(4) .layer-content h4 { color: #ff6688; }
+
+.layer-content ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.layer-content li {
+    margin-bottom: 0.8rem;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.layer-content li strong {
+    color: #333333;
+    margin-right: 0.3rem;
+}
+
+/* Изображение */
+#iotPlatformsInfo img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 150, 255, 0.2);
+    border: 3px solid white;
+}
+
+/* Протоколы IoT */
+.iot-protocols {
+    margin: 2.5rem 0;
+}
+
+.iot-protocols h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #00aa88;
+    font-size: 1.4rem;
+}
+
+.protocols-icon {
+    font-size: 1.5rem;
+    background: #00aa88;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.protocols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.protocol {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 170, 136, 0.1);
+    border: 2px solid #80ffdd;
+    transition: all 0.3s ease;
+}
+
+.protocol:hover {
+    transform: translateY(-5px);
+    border-color: #00aa88;
+    box-shadow: 0 8px 20px rgba(0, 170, 136, 0.15);
+}
+
+.protocol-header {
+    padding: 1.2rem;
+    background: #e6fff8;
+    border-bottom: 1px solid #80ffdd;
+}
+
+.protocol-header h4 {
+    margin: 0;
+    color: #00aa88;
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.protocol-content {
+    padding: 1.5rem;
+}
+
+.protocol-content ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.protocol-content li {
+    margin-bottom: 0.8rem;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.protocol-content li strong {
+    color: #333333;
+    margin-right: 0.3rem;
+}
+
+/* Облачные IoT платформы */
+.cloud-iot-platforms {
+    background: linear-gradient(135deg, #f0f8ff, #e6f2ff);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid #99ccff;
+}
+
+.cloud-iot-platforms h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #0066cc;
+    font-size: 1.4rem;
+}
+
+.cloud-icon {
+    font-size: 1.5rem;
+    background: #0066cc;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.platforms-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.platform {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 102, 204, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.platform:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+}
+
+.platform-header {
+    padding: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+.platform-header.aws {
+    background: linear-gradient(135deg, #ff9900, #ffaa33);
+}
+
+.platform-header.azure {
+    background: linear-gradient(135deg, #0078d7, #00a4ef);
+}
+
+.platform-header.google {
+    background: linear-gradient(135deg, #4285f4, #669df6);
+}
+
+.platform-header h4 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.platform-content {
+    padding: 1.5rem;
+}
+
+.services h5 {
+    color: #0066cc;
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+}
+
+.services ul {
+    padding-left: 1rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.services li {
+    margin-bottom: 0.8rem;
+    color: #555555;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.services li strong {
+    color: #333333;
+    margin-right: 0.3rem;
+}
+
+.pricing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem;
+    background: #f0f8ff;
+    border-radius: 6px;
+    border: 1px solid #cce0ff;
+}
+
+.price-label {
+    color: #0066cc;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.price-value {
+    color: #ff6600;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Открытые IoT платформы */
+.open-iot-platforms {
+    margin: 2.5rem 0;
+}
+
+.open-iot-platforms h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #9933cc;
+    font-size: 1.4rem;
+}
+
+.open-icon {
+    font-size: 1.5rem;
+    background: #9933cc;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.open-platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.open-platforms-grid .platform {
+    border-color: #e6ccff;
+}
+
+.open-platforms-grid .platform:hover {
+    border-color: #9933cc;
+}
+
+.open-platforms-grid .platform-header {
+    background: linear-gradient(135deg, #9933cc, #aa66ff);
+}
+
+.open-platforms-grid .platform-content ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.open-platforms-grid .platform-content li {
+    margin-bottom: 0.8rem;
+    color: #555555;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.open-platforms-grid .platform-content li strong {
+    color: #9933cc;
+    margin-right: 0.3rem;
+}
+
+/* Безопасность IoT */
+.iot-security {
+    background: linear-gradient(135deg, #fff0f0, #ffe6e6);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid #ff9999;
+}
+
+.iot-security h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #cc0000;
+    font-size: 1.4rem;
+}
+
+.security-icon {
+    font-size: 1.5rem;
+    background: #cc0000;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.security-challenges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.challenge {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid #ffcccc;
+    transition: all 0.3s ease;
+}
+
+.challenge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(204, 0, 0, 0.1);
+}
+
+.challenge-header h4 {
+    margin: 0 0 1rem 0;
+    color: #cc0000;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ffcccc;
+}
+
+.challenge-content ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.challenge-content li {
+    margin-bottom: 0.8rem;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.challenge-content li strong {
+    color: #cc0000;
+    margin-right: 0.3rem;
+}
+
+/* Edge computing в IoT */
+.iot-edge {
+    margin: 2.5rem 0;
+}
+
+.iot-edge h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #ff6600;
+    font-size: 1.4rem;
+}
+
+.edge-icon {
+    font-size: 1.5rem;
+    background: #ff6600;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.edge-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(255, 102, 0, 0.1);
+    border: 2px solid #ffcc99;
+    transition: all 0.3s ease;
+}
+
+.benefit:hover {
+    transform: translateY(-5px);
+    border-color: #ff6600;
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.15);
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    background: #ff6600;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.benefit-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: #ff6600;
+    font-size: 1.1rem;
+}
+
+.benefit-content p {
+    margin: 0;
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Примеры IoT решений */
+.iot-examples {
+    background: linear-gradient(135deg, #f0fff0, #e6ffe6);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid #99ff99;
+}
+
+.iot-examples h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #009933;
+    font-size: 1.4rem;
+}
+
+.examples-icon {
+    font-size: 1.5rem;
+    background: #009933;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.example {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #99ff99;
+    transition: all 0.3s ease;
+}
+
+.example:hover {
+    transform: translateY(-5px);
+    border-color: #009933;
+    box-shadow: 0 8px 20px rgba(0, 153, 51, 0.15);
+}
+
+.example-header {
+    padding: 1.2rem;
+    background: #e6ffe6;
+    border-bottom: 1px solid #99ff99;
+    text-align: center;
+}
+
+.example-header h4 {
+    margin: 0;
+    color: #009933;
+    font-size: 1.2rem;
+}
+
+.example-content {
+    padding: 1.5rem;
+}
+
+.example-content ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.example-content li {
+    margin-bottom: 0.8rem;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Тенденции развития IoT */
+.iot-trends {
+    margin: 2.5rem 0;
+}
+
+.iot-trends h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #9966ff;
+    font-size: 1.4rem;
+}
+
+.trends-icon {
+    font-size: 1.5rem;
+    background: #9966ff;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.trends-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.trend {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(153, 102, 255, 0.1);
+    border: 2px solid #e6ccff;
+    transition: all 0.3s ease;
+}
+
+.trend:hover {
+    transform: translateY(-5px);
+    border-color: #9966ff;
+    box-shadow: 0 8px 20px rgba(153, 102, 255, 0.15);
+}
+
+.trend-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.trend h4 {
+    margin: 0 0 1rem 0;
+    color: #9966ff;
+    font-size: 1.1rem;
+}
+
+.trend p {
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Разработка IoT решений */
+.iot-development {
+    background: linear-gradient(135deg, #fff5e6, #ffebcc);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid #ffcc99;
+}
+
+.iot-development h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #ff6600;
+    font-size: 1.4rem;
+}
+
+.development-icon {
+    font-size: 1.5rem;
+    background: #ff6600;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.development-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 2px solid #ffcc99;
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    border-color: #ff6600;
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.15);
+}
+
+.step-number {
+    background: #ff6600;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.step-content h4 {
+    margin: 0 0 0.8rem 0;
+    color: #ff6600;
+    font-size: 1.1rem;
+}
+
+.step-content p {
+    color: #666666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Заключение */
+.iot-conclusion {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #e6f2ff, #cce0ff);
+    border-radius: 10px;
+    border-left: 4px solid #0088cc;
+}
+
+.highlight {
+    color: #0088cc;
+    font-weight: 600;
+    background: rgba(0, 136, 204, 0.1);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+}
+
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #iotPlatformsInfo {
+        padding: 1rem;
+    }
+    
+    .architecture-layers {
+        padding-left: 1rem;
+    }
+    
+    .architecture-layers::before {
+        left: 0.2rem;
+    }
+    
+    .layer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .layer-number {
+        align-self: center;
+    }
+    
+    .protocols-grid,
+    .platforms-comparison,
+    .open-platforms-grid,
+    .security-challenges,
+    .edge-benefits,
+    .examples-grid,
+    .trends-list,
+    .development-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefit {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .layer-content ul {
+        text-align: left;
+    }
+    
+    .pricing {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .protocol-header h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Анимации */
+@keyframes iotPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 136, 204, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 136, 204, 0);
+    }
+}
+
+@keyframes dataFlow {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+.layer:hover,
+.protocol:hover,
+.platform:hover,
+.challenge:hover,
+.benefit:hover,
+.example:hover,
+.trend:hover,
+.step:hover {
+    animation: iotPulse 2s infinite;
+}
+
+/* Анимация потока данных для заголовка */
+.iot-architecture h3 {
+    background: linear-gradient(90deg, 
+        #0088cc, #00cc88, #ffaa00, #ff6688, 
+        #0088cc, #00cc88, #ffaa00, #ff6688);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: dataFlow 8s linear infinite;
+}
+
+/* Анимация затухания и подъема */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.layer,
+.protocol,
+.platform,
+.challenge,
+.benefit,
+.example,
+.trend,
+.step {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Задержки для анимации */
+.layer:nth-child(2) { animation-delay: 0.1s; }
+.layer:nth-child(3) { animation-delay: 0.2s; }
+.layer:nth-child(4) { animation-delay: 0.3s; }
+.protocol:nth-child(2) { animation-delay: 0.1s; }
+.protocol:nth-child(3) { animation-delay: 0.2s; }
+.protocol:nth-child(4) { animation-delay: 0.3s; }
+
+/* Кастомный скроллбар */
+#iotPlatformsInfo::-webkit-scrollbar {
+    width: 10px;
+}
+
+#iotPlatformsInfo::-webkit-scrollbar-track {
+    background: #e6f7ff;
+    border-radius: 5px;
+}
+
+#iotPlatformsInfo::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0088cc, #00aa88);
+    border-radius: 5px;
+}
+
+#iotPlatformsInfo::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #006699, #008866);
+}
