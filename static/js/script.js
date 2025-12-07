@@ -2088,6 +2088,15 @@ window.onload = function () {
     resultMessage.style.color = 'green';
     retryButton.style.display = 'none'; // скрываем кнопку при успехе
 
+    // Создаём кнопку для перехода
+    const nextButton = document.createElement('button');
+    nextButton.textContent = 'Перейти дальше';
+    nextButton.className = 'next-button cpu-theme'; // Добавляем классы стилей
+    nextButton.addEventListener('click', () => {
+      window.location.href = '/index1'; // замените на нужный адрес
+    });
+    resultMessage.parentNode.appendChild(nextButton);
+
   }
 
 
