@@ -4763,6 +4763,348 @@
     </div>
 </section>
 
+<section class="info-section" id="embeddedsystemsInfo">
+    <h2>⚙️ Встроенные системы и микроконтроллеры</h2>
+    
+    <!-- Классификация встроенных систем -->
+    <div class="embedded-classification">
+        <h3><span class="class-icon">📊</span> Классификация встроенных систем</h3>
+        
+        <div class="classification-grid">
+            <div class="class-category">
+                <div class="category-header">
+                    <span class="category-icon">⏱️</span>
+                    <h4>По требованиям к времени</h4>
+                </div>
+                <div class="category-content">
+                    <div class="system-type">
+                        <h5>Жесткого реального времени</h5>
+                        <p>Несоблюдение сроков приводит к катастрофическим последствиям (авионика, медицинское оборудование)</p>
+                    </div>
+                    <div class="system-type">
+                        <h5>Мягкого реального времени</h5>
+                        <p>Несоблюдение сроков ухудшает качество, но не приводит к катастрофе (мультимедиа, сети)</p>
+                    </div>
+                    <div class="system-type">
+                        <h5>Не реального времени</h5>
+                        <p>Нет строгих временных ограничений (бытовая техника, простые контроллеры)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="class-category">
+                <div class="category-header">
+                    <span class="category-icon">💻</span>
+                    <h4>По сложности</h4>
+                </div>
+                <div class="category-content">
+                    <div class="system-type">
+                        <h5>Простые (8-16 бит)</h5>
+                        <p>Одна задача, малая память, низкая стоимость (датчики, пульты)</p>
+                    </div>
+                    <div class="system-type">
+                        <h5>Средние (16-32 бит)</h5>
+                        <p>Несколько задач, RTOS, сетевое подключение (роутеры, бытовая техника)</p>
+                    </div>
+                    <div class="system-type">
+                        <h5>Сложные (32-64 бит)</h5>
+                        <p>Полноценная ОС, сложные интерфейсы, высокая производительность (смартфоны, автомобильные системы)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img src="/static/images/embedded-systems.jpg" alt="Встроенные системы" />
+
+    <!-- Архитектура микроконтроллеров -->
+    <div class="mcu-architecture">
+        <h3><span class="architecture-icon">🏗️</span> Архитектура микроконтроллеров</h3>
+        
+        <div class="architecture-components">
+            <div class="component">
+                <div class="component-header">
+                    <span class="component-icon">🧠</span>
+                    <h4>Ядро процессора</h4>
+                </div>
+                <div class="component-content">
+                    <div class="core-type">
+                        <h5>8-битные архитектуры</h5>
+                        <ul>
+                            <li><strong>AVR:</strong> Atmel (теперь Microchip), популярны в Arduino</li>
+                            <li><strong>PIC:</strong> Microchip, широкий модельный ряд</li>
+                            <li><strong>8051:</strong> Intel (теперь различные производители), классика</li>
+                        </ul>
+                    </div>
+                    <div class="core-type">
+                        <h5>32-битные архитектуры</h5>
+                        <ul>
+                            <li><strong>ARM Cortex-M:</strong> Современный стандарт, от M0 до M7</li>
+                            <li><strong>RISC-V:</strong> Открытая архитектура, набирает популярность</li>
+                            <li><strong>MIPS:</strong> Используется в сетевом оборудовании</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="component">
+                <div class="component-header">
+                    <span class="component-icon">💾</span>
+                    <h4>Память</h4>
+                </div>
+                <div class="component-content">
+                    <div class="memory-type">
+                        <h5>Flash память</h5>
+                        <ul>
+                            <li><strong>Объем:</strong> 1 КБ - 2 МБ</li>
+                            <li><strong>Типы:</strong> NOR (быстрый доступ), NAND (большая плотность)</li>
+                            <li><strong>Выносливость:</strong> 10k - 100k циклов записи</li>
+                        </ul>
+                    </div>
+                    <div class="memory-type">
+                        <h5>RAM</h5>
+                        <ul>
+                            <li><strong>Объем:</strong> 64 байт - 256 КБ</li>
+                            <li><strong>Типы:</strong> SRAM (быстрая), DRAM (плотная)</li>
+                            <li><strong>Энергопотребление:</strong> Критично для батарейных устройств</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="component">
+                <div class="component-header">
+                    <span class="component-icon">🔌</span>
+                    <h4>Периферия</h4>
+                </div>
+                <div class="component-content">
+                    <div class="peripheral-type">
+                        <h5>Цифровая</h5>
+                        <ul>
+                            <li>GPIO (общего назначения)</li>
+                            <li>Таймеры/счетчики</li>
+                            <li>ШИМ (PWM) контроллеры</li>
+                            <li>Интерфейсы связи (UART, SPI, I2C)</li>
+                        </ul>
+                    </div>
+                    <div class="peripheral-type">
+                        <h5>Аналоговая</h5>
+                        <ul>
+                            <li>АЦП (ADC) - 8-16 бит</li>
+                            <li>ЦАП (DAC) - для генерации сигналов</li>
+                            <li>Компараторы напряжения</li>
+                            <li>Операционные усилители</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Популярные платформы -->
+    <div class="embedded-platforms">
+        <h3><span class="platforms-icon">🔧</span> Популярные платформы для разработки</h3>
+        
+        <div class="platforms-grid">
+            <div class="platform">
+                <div class="platform-header arduino">
+                    <h4>Arduino</h4>
+                </div>
+                <div class="platform-content">
+                    <p><strong>Простота использования:</strong> Идеален для начинающих</p>
+                    <ul>
+                        <li><strong>Язык:</strong> C++ (упрощенный)</li>
+                        <li><strong>Платы:</strong> Uno, Mega, Nano, Due</li>
+                        <li><strong>Экосистема:</strong> Огромное количество библиотек и шилдов</li>
+                        <li><strong>Применение:</strong> Образование, прототипирование, хобби-проекты</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="platform">
+                <div class="platform-header esp">
+                    <h4>ESP32/ESP8266</h4>
+                </div>
+                <div class="platform-content">
+                    <p><strong>Wi-Fi и Bluetooth:</strong> Встроенные беспроводные интерфейсы</p>
+                    <ul>
+                        <li><strong>Ядро:</strong> Xtensa (ESP32), Tensilica (ESP8266)</li>
+                        <li><strong>Память:</strong> До 520 КБ RAM, 16 МБ Flash</li>
+                        <li><strong>Особенности:</strong> Два ядра (ESP32), ультранизкое энергопотребление</li>
+                        <li><strong>Применение:</strong> IoT устройства, умный дом, носимые устройства</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="platform">
+                <div class="platform-header stm">
+                    <h4>STM32</h4>
+                </div>
+                <div class="platform-content">
+                    <p><strong>Профессиональная платформа:</strong> Широкий модельный ряд</p>
+                    <ul>
+                        <li><strong>Архитектура:</strong> ARM Cortex-M0/M3/M4/M7</li>
+                        <li><strong>Серии:</strong> F0-F7, L0-L5 (энергоэффективные)</li>
+                        <li><strong>Инструменты:</strong> STM32CubeIDE, HAL библиотеки</li>
+                        <li><strong>Применение:</strong> Промышленность, автомобили, медицинское оборудование</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="platform">
+                <div class="platform-header raspberry">
+                    <h4>Raspberry Pi Pico</h4>
+                </div>
+                <div class="platform-content">
+                    <p><strong>Новое поколение:</strong> Доступный RP2040 микроконтроллер</p>
+                    <ul>
+                        <li><strong>Ядро:</strong> ARM Cortex-M0+ (два ядра)</li>
+                        <li><strong>Особенности:</strong> Программируемый I/O (PIO)</li>
+                        <li><strong>Цена:</strong> Очень доступная</li>
+                        <li><strong>Применение:</strong> Образование, встраиваемые проекты</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Операционные системы реального времени -->
+    <div class="rtos-systems">
+        <h3><span class="rtos-icon">⏱️</span> Операционные системы реального времени (RTOS)</h3>
+        
+        <div class="rtos-comparison">
+            <div class="rtos">
+                <div class="rtos-header">
+                    <h4>FreeRTOS</h4>
+                </div>
+                <div class="rtos-content">
+                    <ul>
+                        <li><strong>Лицензия:</strong> MIT, бесплатный</li>
+                        <li><strong>Размер:</strong> 4-9 КБ</li>
+                        <li><strong>Особенности:</strong> Прост, портируем, сообщества поддержка</li>
+                        <li><strong>Применение:</strong> IoT, промышленные контроллеры</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="rtos">
+                <div class="rtos-header">
+                    <h4>Zephyr</h4>
+                </div>
+                <div class="rtos-content">
+                    <ul>
+                        <li><strong>Лицензия:</strong> Apache 2.0</li>
+                        <li><strong>Размер:</strong> 2-50 КБ</li>
+                        <li><strong>Особенности:</strong> Современный, модульный, безопасность</li>
+                        <li><strong>Применение:</strong> IoT, носимые устройства</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="rtos">
+                <div class="rtos-header">
+                    <h4>VxWorks</h4>
+                </div>
+                <div class="rtos-content">
+                    <ul>
+                        <li><strong>Лицензия:</strong> Проприетарная</li>
+                        <li><strong>Размер:</strong> От 20 КБ</li>
+                        <li><strong>Особенности:</strong> Высокая надежность, сертификация</li>
+                        <li><strong>Применение:</strong> Аэрокосмическая, военная техника</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="rtos">
+                <div class="rtos-header">
+                    <h4>ThreadX</h4>
+                </div>
+                <div class="rtos-content">
+                    <ul>
+                        <li><strong>Лицензия:</strong> Microsoft (недавно открыт)</li>
+                        <li><strong>Размер:</strong> 2-10 КБ</li>
+                        <li><strong>Особенности:</strong> Маленький, быстрый, детерминированный</li>
+                        <li><strong>Применение:</strong> Consumer electronics, медицинское оборудование</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Интерфейсы связи -->
+    <div class="communication-interfaces">
+        <h3><span class="comm-icon">🔌</span> Интерфейсы связи во встроенных системах</h3>
+        
+        <div class="interfaces-grid">
+            <div class="interface">
+                <div class="interface-header">
+                    <h4>UART (Universal Asynchronous Receiver/Transmitter)</h4>
+                </div>
+                <div class="interface-content">
+                    <ul>
+                        <li><strong>Тип:</strong> Асинхронный, последовательный</li>
+                        <li><strong>Скорость:</strong> 300-4,000,000 бод</li>
+                        <li><strong>Линии:</strong> TX, RX, GND (минимум)</li>
+                        <li><strong>Применение:</strong> Отладка, соединение с датчиками</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="interface">
+                <div class="interface-header">
+                    <h4>SPI (Serial Peripheral Interface)</h4>
+                </div>
+                <div class="interface-content">
+                    <ul>
+                        <li><strong>Тип:</strong> Синхронный, последовательный</li>
+                        <li><strong>Скорость:</strong> До 10+ Мбит/с</li>
+                        <li><strong>Линии:</strong> SCLK, MOSI, MISO, SS (CS)</li>
+                        <li><strong>Применение:</strong> Flash память, дисплеи, датчики</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="interface">
+                <div class="interface-header">
+                    <h4>I2C (Inter-Integrated Circuit)</h4>
+                </div>
+                <div class="interface-content">
+                    <ul>
+                        <li><strong>Тип:</strong> Синхронный, последовательный</li>
+                        <li><strong>Скорость:</strong> 100 кбит/с (стандарт), 400 кбит/с (быстрый)</li>
+                        <li><strong>Линии:</strong> SCL (clock), SDA (data)</li>
+                        <li><strong>Применение:</strong> Датчики, EEPROM, RTC</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="interface">
+                <div class="interface-header">
+                    <h4>CAN (Controller Area Network)</h4>
+                </div>
+                <div class="interface-content">
+                    <ul>
+                        <li><strong>Тип:</strong> Последовательная шина</li>
+                        <li><strong>Скорость:</strong> 125 кбит/с - 1 Мбит/с</li>
+                        <li><strong>Особенности:</strong> Отказоустойчивый, для жестких условий</li>
+                        <li><strong>Применение:</strong> Автомобили, промышленность</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="embedded-conclusion">
+        <p class="info-text">
+            Встроенные системы окружают нас повсюду — от <span class="highlight">простых игрушек до сложнейших медицинских приборов и космических аппаратов</span>. 
+            <span class="highlight">Микроконтроллеры</span>, являющиеся сердцем этих систем, продолжают эволюционировать, становясь 
+            более мощными, энергоэффективными и доступными, открывая новые возможности для инноваций в самых разных областях.
+        </p>
+    </div>
+</section>
+
 
 <!-- В конец тела страницы добавить -->
   <section class="info-section" id="pc-assembly" style="margin-top: 50px; padding: 20px; border-top: 2px solid #ccc;">
