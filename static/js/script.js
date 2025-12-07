@@ -1949,9 +1949,67 @@ window.onload = function () {
             }
         }
   
+
   document.head.appendChild(futureStyles);
 
   console.log('Все скрипты успешно загружены и инициализированы, включая футуристическую секцию!');
+
+
+  // Добавьте в существующий JS файл или перед закрывающим тегом </body>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Плавная прокрутка для навигации
+    const navLinks = document.querySelectorAll('#nav-list a[href^="#"]');
+  
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+      
+        // Пропускаем пустые ссылки
+        if (href === '#' || href === '') return;
+      
+        // Находим целевой элемент
+        const targetElement = document.querySelector(href);
+        if (!targetElement) return;
+      
+        e.preventDefault();
+      
+        // Рассчитываем позицию с учетом фиксированного меню
+        const headerHeight = document.querySelector('#nav-menu')?.offsetHeight || 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+      
+        // Плавная прокрутка
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      
+        // Добавляем класс для подсветки
+        targetElement.classList.add('highlighted');
+        setTimeout(() => {
+        targetElement.classList.remove('highlighted');
+        }, 2000);
+      });
+    });
+  
+    // Функция для автоматической прокрутки при загрузке с якорем
+    if (window.location.hash) {
+      setTimeout(() => {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+          const headerHeight = document.querySelector('#nav-menu')?.offsetHeight || 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+        
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  });
+
 
 
 
