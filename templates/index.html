@@ -3212,6 +3212,236 @@
     </div>
 </section>
 
+<section class="info-section" id="graphicsProcessingInfo">
+    <h2>🎨 Графическая обработка и GPU архитектура</h2>
+    
+    <!-- Эволюция GPU -->
+    <div class="gpu-evolution">
+        <h3><span class="evolution-icon">📈</span> Эволюция графических процессоров</h3>
+        
+        <div class="evolution-stages">
+            <div class="stage">
+                <div class="stage-year">1980-е</div>
+                <div class="stage-content">
+                    <h4>Векторные дисплеи и VGA</h4>
+                    <p>Простой вывод графики, фиксированный функционал</p>
+                </div>
+            </div>
+            
+            <div class="stage">
+                <div class="stage-year">1990-е</div>
+                <div class="stage-content">
+                    <h4>2D/3D ускорители</h4>
+                    <p>3dfx Voodoo, NVIDIA RIVA, ATI Rage</p>
+                </div>
+            </div>
+            
+            <div class="stage">
+                <div class="stage-year">2000-е</div>
+                <div class="stage-content">
+                    <h4>Программируемые шейдеры</h4>
+                    <p>DirectX 9, Shader Model 2.0, GeForce FX</p>
+                </div>
+            </div>
+            
+            <div class="stage">
+                <div class="stage-year">2010-е</div>
+                <div class="stage-content">
+                    <h4>Унифицированные шейдеры</h4>
+                    <p>CUDA, OpenCL, вычисления общего назначения</p>
+                </div>
+            </div>
+            
+            <div class="stage">
+                <div class="stage-year">2020-е</div>
+                <div class="stage-content">
+                    <h4>RTX и AI</h4>
+                    <p>Трассировка лучей, тензорные ядра, DLSS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img src="/static/images/gpu-architecture.jpg" alt="Архитектура GPU" />
+
+    <!-- Архитектура GPU -->
+    <div class="gpu-architecture">
+        <h3><span class="architecture-icon">🏗️</span> Архитектура современных GPU</h3>
+        
+        <div class="architecture-components">
+            <div class="component">
+                <div class="component-header">
+                    <span class="component-icon">🎯</span>
+                    <h4>Потоковые процессоры (CUDA Cores/Stream Processors)</h4>
+                </div>
+                <div class="component-content">
+                    <p>Основные вычислительные единицы GPU. Тысячи простых ядер для параллельной обработки.</p>
+                    <div class="component-specs">
+                        <div class="spec">
+                            <span class="spec-label">NVIDIA:</span>
+                            <span class="spec-value">До 18432 CUDA Cores (RTX 4090)</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">AMD:</span>
+                            <span class="spec-value">До 12288 Stream Processors (RX 7900 XTX)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="component">
+                <div class="component-header">
+                    <span class="component-icon">🔍</span>
+                    <h4>Тензорные ядра (NVIDIA) / Матричные ядра (AMD)</h4>
+                </div>
+                <div class="component-content">
+                    <p>Специализированные блоки для операций с матрицами. Используются в AI и DLSS.</p>
+                    <div class="component-specs">
+                        <div class="spec">
+                            <span class="spec-label">Производительность:</span>
+                            <span class="spec-value">До 1300 TFLOPS (FP16)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="component">
+                <div class="component-header">
+                    <span class="component-icon">💡</span>
+                    <h4>RT-ядра (Ray Tracing Cores)</h4>
+                </div>
+                <div class="component-content">
+                    <p>Аппаратное ускорение трассировки лучей для реалистичного освещения и отражений.</p>
+                    <div class="component-specs">
+                        <div class="spec">
+                            <span class="spec-label">Скорость:</span>
+                            <span class="spec-value">До 190 RT-TFLOPS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Технологии рендеринга -->
+    <div class="rendering-tech">
+        <h3><span class="rendering-icon">🖼️</span> Технологии рендеринга</h3>
+        
+        <div class="rendering-methods">
+            <div class="method">
+                <div class="method-header">
+                    <h4>Растеризация (Rasterization)</h4>
+                    <span class="method-type">Традиционная</span>
+                </div>
+                <div class="method-content">
+                    <p>Преобразование 3D-объектов в 2D-пиксели. Быстрая, но менее реалистичная.</p>
+                    <ul>
+                        <li><strong>Производительность:</strong> Высокая</li>
+                        <li><strong>Реалистичность:</strong> Средняя</li>
+                        <li><strong>Использование:</strong> Большинство игр</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="method">
+                <div class="method-header">
+                    <h4>Трассировка лучей (Ray Tracing)</h4>
+                    <span class="method-type">Современная</span>
+                </div>
+                <div class="method-content">
+                    <p>Моделирование поведения света. Очень реалистичная, но ресурсоемкая.</p>
+                    <ul>
+                        <li><strong>Производительность:</strong> Низкая</li>
+                        <li><strong>Реалистичность:</strong> Очень высокая</li>
+                        <li><strong>Использование:</strong> AAA игры, кино</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="method">
+                <div class="method-header">
+                    <h4>Path Tracing</h4>
+                    <span class="method-type">Продвинутая</span>
+                </div>
+                <div class="method-content">
+                    <p>Полное моделирование света. Используется в офлайн-рендеринге.</p>
+                    <ul>
+                        <li><strong>Производительность:</strong> Очень низкая</li>
+                        <li><strong>Реалистичность:</strong> Фотографическая</li>
+                        <li><strong>Использование:</strong> Кино, архитектура</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- API графики -->
+    <div class="graphics-api">
+        <h3><span class="api-icon">🔌</span> Графические API</h3>
+        
+        <div class="api-comparison">
+            <div class="api-card">
+                <div class="api-header directx">
+                    <h4>DirectX</h4>
+                </div>
+                <div class="api-content">
+                    <p><strong>Разработчик:</strong> Microsoft</p>
+                    <p><strong>Версии:</strong> 9, 10, 11, 12</p>
+                    <p><strong>Особенности:</strong> Только Windows, хорошая оптимизация</p>
+                    <div class="api-features">
+                        <span class="feature">Direct3D</span>
+                        <span class="feature">DirectCompute</span>
+                        <span class="feature">DirectML</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="api-card">
+                <div class="api-header opengl">
+                    <h4>OpenGL / Vulkan</h4>
+                </div>
+                <div class="api-content">
+                    <p><strong>Разработчик:</strong> Khronos Group</p>
+                    <p><strong>Версии:</strong> OpenGL 4.6, Vulkan 1.3</p>
+                    <p><strong>Особенности:</strong> Кроссплатформенность</p>
+                    <div class="api-features">
+                        <span class="feature">GLSL</span>
+                        <span class="feature">SPIR-V</span>
+                        <span class="feature">MoltenVK</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="api-card">
+                <div class="api-header metal">
+                    <h4>Metal</h4>
+                </div>
+                <div class="api-content">
+                    <p><strong>Разработчик:</strong> Apple</p>
+                    <p><strong>Версии:</strong> Metal 2, Metal 3</p>
+                    <p><strong>Особенности:</strong> Apple экосистема</p>
+                    <div class="api-features">
+                        <span class="feature">MetalFX</span>
+                        <span class="feature">Metal Performance Shaders</span>
+                        <span class="feature">Metal Ray Tracing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="gpu-conclusion">
+        <p class="info-text">
+            Современные GPU превратились из простых <span class="highlight">ускорителей графики в универсальные вычислительные платформы</span>, 
+            способные решать задачи искусственного интеллекта, научных вычислений и сложного рендеринга. 
+            <span class="highlight">Параллельная архитектура GPU</span> делает их идеальными для обработки больших объемов данных, 
+            открывая новые горизонты в компьютерной графике и не только.
+        </p>
+    </div>
+</section>
+
 
 <!-- В конец тела страницы добавить -->
   <section class="info-section" id="pc-assembly" style="margin-top: 50px; padding: 20px; border-top: 2px solid #ccc;">
