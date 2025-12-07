@@ -4993,5 +4993,62 @@ footer {
 
 
 
+#iotDevicesInfo {
+    padding: 30px;
+    background-color: #e8f5e9;
+    border-radius: 15px;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    color: #2c3e50;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+#iotDevicesInfo:hover {
+    box-shadow: 0 12px 35px rgba(76, 175, 80, 0.2);
+}
+#iotDevicesInfo h2 {
+    color: #27ae60;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: center;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 10px;
+}
+#iotDevicesInfo .info-text {
+    font-size: 1.1em;
+    line-height: 1.7em;
+    margin-bottom: 15px;
+}
+#iotDevicesInfo .info-list {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+#iotDevicesInfo .info-list li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 15px;
+}
+#iotDevicesInfo .info-list li:before {
+    content: "•";
+    color: #4CAF50;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+#iotDevicesInfo img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.15);
+    transition: transform 0.4s ease;
+}
+#iotDevicesInfo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.25);
+}
 
 
