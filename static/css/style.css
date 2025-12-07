@@ -5573,3 +5573,708 @@ footer {
     background: #a8a8a8;
 }
 
+
+/* Стили для секции устройств вывода */
+#outputDevicesDetailInfo {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f9 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Классификация устройств вывода */
+.output-classification {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.output-classification h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.class-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #4dabf7, #339af0);
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.output-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+}
+
+.output-type {
+    background: #f8f9fa;
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.output-type:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.output-type.visual {
+    border-color: #4dabf7;
+    background: linear-gradient(135deg, #e7f5ff, #d0ebff);
+}
+
+.output-type.audio {
+    border-color: #20c997;
+    background: linear-gradient(135deg, #e6fcf5, #c3fae8);
+}
+
+.output-type.tactile {
+    border-color: #fa5252;
+    background: linear-gradient(135deg, #fff5f5, #ffe3e3);
+}
+
+.output-type.other {
+    border-color: #7950f2;
+    background: linear-gradient(135deg, #f3f0ff, #e5dbff);
+}
+
+.type-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.output-type h4 {
+    margin: 0.5rem 0;
+    color: #343a40;
+    font-size: 1.1rem;
+}
+
+.output-type p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Изображение */
+#outputDevicesDetailInfo img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border: 3px solid white;
+}
+
+/* Технологии мониторов */
+.monitors-tech {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.monitors-tech h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.monitor-icon {
+    font-size: 1.5rem;
+    background: #339af0;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.tech-comparison-table {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.tech-comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.tech-comparison-table th {
+    background: linear-gradient(135deg, #4dabf7, #339af0);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-comparison-table th:last-child {
+    border-right: none;
+}
+
+.tech-comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    color: #495057;
+}
+
+.tech-comparison-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.tech-comparison-table tbody tr:hover {
+    background-color: #e7f5ff;
+}
+
+.tech-comparison-table td:first-child {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Характеристики мониторов */
+.monitor-specs {
+    margin: 2.5rem 0;
+}
+
+.monitor-specs h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.specs-icon {
+    font-size: 1.5rem;
+    background: #20c997;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.spec-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease;
+}
+
+.spec-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.spec-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.spec-icon {
+    font-size: 1.5rem;
+    background: #495057;
+    padding: 0.3rem;
+    border-radius: 6px;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spec-header h4 {
+    margin: 0;
+    color: #343a40;
+    font-size: 1.2rem;
+}
+
+.spec-content {
+    padding: 1.5rem;
+}
+
+.spec-content ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.spec-content li {
+    margin-bottom: 0.5rem;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.spec-content p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #dee2e6;
+}
+
+/* Акустические системы */
+.audio-systems {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.audio-systems h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.audio-icon {
+    font-size: 1.5rem;
+    background: #fa5252;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.audio-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.audio-type {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.type-header h4 {
+    margin: 0 0 1.2rem 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: 2px solid #4dabf7;
+    padding-bottom: 0.5rem;
+}
+
+.type-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.config {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #20c997;
+}
+
+.config-number {
+    background: #20c997;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.config p {
+    margin: 0;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.audio-type ul {
+    padding-left: 1.2rem;
+}
+
+.audio-type li {
+    margin-bottom: 0.8rem;
+    color: #495057;
+    line-height: 1.5;
+}
+
+/* Принтеры и плоттеры */
+.printers-plotters {
+    margin: 2.5rem 0;
+}
+
+.printers-plotters h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.printer-icon {
+    font-size: 1.5rem;
+    background: #7950f2;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.printer-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.printer-type {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid;
+    transition: transform 0.3s ease;
+}
+
+.printer-type:hover {
+    transform: translateY(-5px);
+}
+
+.printer-type:nth-child(1) {
+    border-color: #4dabf7;
+}
+
+.printer-type:nth-child(2) {
+    border-color: #495057;
+}
+
+.printer-type:nth-child(3) {
+    border-color: #fa5252;
+}
+
+.printer-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.printer-header .printer-icon {
+    font-size: 1.8rem;
+    padding: 0.4rem;
+    border-radius: 10px;
+}
+
+.printer-header h4 {
+    margin: 0;
+    color: #343a40;
+    font-size: 1.3rem;
+}
+
+.printer-content {
+    padding: 1.5rem;
+}
+
+.printer-content > p {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.printer-content ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.printer-content li {
+    margin-bottom: 0.6rem;
+    color: #495057;
+    line-height: 1.5;
+}
+
+/* Профессиональные устройства вывода */
+.pro-output {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+}
+
+.pro-output h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.pro-icon {
+    font-size: 1.5rem;
+    background: #20c997;
+    padding: 0.3rem;
+    border-radius: 8px;
+}
+
+.pro-output-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.pro-device {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.pro-device:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.pro-device h4 {
+    margin: 0 0 1rem 0;
+    color: white;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #20c997;
+    padding-bottom: 0.5rem;
+}
+
+.pro-device ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.pro-device li {
+    margin-bottom: 0.8rem;
+    color: #e9ecef;
+    line-height: 1.5;
+}
+
+/* Будущее устройств вывода */
+.output-future {
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.output-future h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.future-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #7950f2, #5f3dc4);
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.future-trends {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.trend {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.trend:hover {
+    border-color: #7950f2;
+    background: white;
+    transform: translateY(-5px);
+}
+
+.trend-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.trend h4 {
+    margin: 0 0 0.8rem 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.trend p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Заключение */
+.output-conclusion {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #fff9db, #fff3bf);
+    border-radius: 10px;
+    border-left: 4px solid #f59f00;
+}
+
+.highlight {
+    color: #1971c2;
+    font-weight: 600;
+    background: rgba(25, 113, 194, 0.1);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+}
+
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #495057;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #outputDevicesDetailInfo {
+        padding: 1rem;
+    }
+    
+    .output-types,
+    .specs-grid,
+    .printer-types-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .audio-types {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .pro-output-grid,
+    .future-trends {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-comparison-table {
+        margin: 0 -1rem;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .output-type {
+        padding: 1rem;
+    }
+    
+    .type-icon {
+        font-size: 1.8rem;
+    }
+    
+    .config {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .trend {
+        padding: 1rem;
+    }
+}
+
+/* Анимации */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.output-type,
+.spec-card,
+.printer-type,
+.trend,
+.pro-device {
+    animation: slideUp 0.5s ease-out;
+}
+
+.output-type:nth-child(2) { animation-delay: 0.1s; }
+.output-type:nth-child(3) { animation-delay: 0.2s; }
+.output-type:nth-child(4) { animation-delay: 0.3s; }
+.spec-card:nth-child(2) { animation-delay: 0.15s; }
+.spec-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Кастомный скроллбар для таблицы */
+.tech-comparison-table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tech-comparison-table::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.tech-comparison-table::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.tech-comparison-table::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
