@@ -7818,3 +7818,794 @@ footer {
     background: linear-gradient(135deg, #339af0, #5f3dc4);
 }
 
+
+
+
+/* Стили для секции компьютерных сетей */
+#computerNetworksInfo {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 100, 255, 0.08);
+}
+
+/* Сетевые модели */
+.network-models {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e6f2ff;
+}
+
+.network-models h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #0066cc;
+    font-size: 1.4rem;
+}
+
+.model-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #0066cc, #3399ff);
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.models-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.model-card {
+    background: #f8fbff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid;
+    transition: all 0.3s ease;
+}
+
+.model-card:nth-child(1) {
+    border-color: #0066cc;
+}
+
+.model-card:nth-child(2) {
+    border-color: #00cc99;
+}
+
+.model-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.15);
+}
+
+.model-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+    color: white;
+}
+
+.model-card:nth-child(1) .model-header {
+    background: linear-gradient(135deg, #0066cc, #3399ff);
+}
+
+.model-card:nth-child(2) .model-header {
+    background: linear-gradient(135deg, #00cc99, #33ffcc);
+}
+
+.model-header h4 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.model-layers {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.model-content {
+    padding: 1.5rem;
+}
+
+.model-content ol {
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.model-content li {
+    margin-bottom: 0.8rem;
+    color: #333333;
+    line-height: 1.5;
+    padding-left: 0.5rem;
+}
+
+.model-content li strong {
+    color: #0066cc;
+    margin-right: 0.5rem;
+}
+
+/* Изображение */
+#computerNetworksInfo img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
+}
+
+/* Сетевые устройства */
+.network-devices {
+    margin: 2.5rem 0;
+}
+
+.network-devices h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #0066cc;
+    font-size: 1.4rem;
+}
+
+.devices-icon {
+    font-size: 1.5rem;
+    background: #ff6600;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.devices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.device-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid;
+    transition: all 0.3s ease;
+}
+
+.device-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.device-card:nth-child(1) {
+    border-color: #0066cc;
+}
+
+.device-card:nth-child(2) {
+    border-color: #ff6600;
+}
+
+.device-card:nth-child(3) {
+    border-color: #00cc99;
+}
+
+.device-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: #f8fbff;
+    border-bottom: 1px solid #e6f2ff;
+}
+
+.device-icon {
+    font-size: 1.8rem;
+    background: #0066cc;
+    padding: 0.4rem;
+    border-radius: 8px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.device-card:nth-child(2) .device-icon {
+    background: #ff6600;
+}
+
+.device-card:nth-child(3) .device-icon {
+    background: #00cc99;
+}
+
+.device-header h4 {
+    margin: 0;
+    color: #333333;
+    font-size: 1.2rem;
+}
+
+.device-content {
+    padding: 1.5rem;
+}
+
+.device-content > p {
+    color: #666666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.device-content > p strong {
+    color: #0066cc;
+}
+
+.device-content ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.device-content li {
+    margin-bottom: 0.6rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+.device-content li strong {
+    color: #333333;
+    margin-right: 0.3rem;
+}
+
+/* Беспроводные технологии */
+.wireless-tech {
+    background: linear-gradient(135deg, #fff5e6, #ffebcc);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid #ffcc99;
+}
+
+.wireless-tech h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #ff6600;
+    font-size: 1.4rem;
+}
+
+.wifi-icon {
+    font-size: 1.5rem;
+    background: #ff6600;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.wifi-generations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.generation {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 102, 0, 0.1);
+}
+
+.generation:hover {
+    transform: translateY(-5px);
+    border-color: #ff6600;
+    box-shadow: 0 6px 18px rgba(255, 102, 0, 0.15);
+}
+
+.gen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ffcc99;
+}
+
+.gen-header h4 {
+    margin: 0;
+    color: #ff6600;
+    font-size: 1.1rem;
+}
+
+.gen-year {
+    background: #ff6600;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.gen-content ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.gen-content li {
+    margin-bottom: 0.6rem;
+    color: #555555;
+    font-size: 0.9rem;
+}
+
+.gen-content li strong {
+    color: #ff6600;
+    margin-right: 0.3rem;
+}
+
+/* Проводные технологии */
+.wired-tech {
+    margin: 2.5rem 0;
+}
+
+.wired-tech h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #0066cc;
+    font-size: 1.4rem;
+}
+
+.cable-icon {
+    font-size: 1.5rem;
+    background: #0066cc;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.ethernet-standards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.standard {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 102, 204, 0.1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.standard:hover {
+    transform: translateY(-5px);
+    border-color: #0066cc;
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+}
+
+.std-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e6f2ff;
+}
+
+.std-header h4 {
+    margin: 0;
+    color: #0066cc;
+    font-size: 1.2rem;
+}
+
+.std-speed {
+    background: #0066cc;
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.std-content {
+    color: #555555;
+}
+
+.std-content p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.std-content p strong {
+    color: #333333;
+    margin-right: 0.3rem;
+}
+
+/* Сетевые протоколы */
+.network-protocols {
+    background: linear-gradient(135deg, #e6fff2, #ccffe6);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid #99ffcc;
+}
+
+.network-protocols h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #00994d;
+    font-size: 1.4rem;
+}
+
+.protocol-icon {
+    font-size: 1.5rem;
+    background: #00994d;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.protocols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.protocol-group h4 {
+    color: #00994d;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #99ffcc;
+    font-size: 1.2rem;
+}
+
+.protocol {
+    background: white;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 153, 77, 0.1);
+}
+
+.protocol:last-child {
+    margin-bottom: 0;
+}
+
+.protocol h5 {
+    color: #006633;
+    margin: 0 0 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+.protocol ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.protocol li {
+    margin-bottom: 0.5rem;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Сетевая безопасность */
+.network-security {
+    margin: 2.5rem 0;
+}
+
+.network-security h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #cc0000;
+    font-size: 1.4rem;
+}
+
+.security-icon {
+    font-size: 1.5rem;
+    background: #cc0000;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.security-measures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.measure {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(204, 0, 0, 0.1);
+    border: 2px solid #ffcccc;
+    transition: all 0.3s ease;
+}
+
+.measure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(204, 0, 0, 0.15);
+}
+
+.measure-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: #fff5f5;
+    border-bottom: 1px solid #ffcccc;
+}
+
+.measure-icon {
+    font-size: 1.5rem;
+    background: #cc0000;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.measure-header h4 {
+    margin: 0;
+    color: #cc0000;
+    font-size: 1.2rem;
+}
+
+.measure-content {
+    padding: 1.5rem;
+}
+
+.measure-content ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.measure-content li {
+    margin-bottom: 0.8rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+.measure-content li strong {
+    color: #cc0000;
+    margin-right: 0.3rem;
+}
+
+/* Будущее сетей */
+.network-future {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+}
+
+.network-future h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.future-icon {
+    font-size: 1.5rem;
+    background: #9b59b6;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.future-tech {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.tech {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #9b59b6;
+}
+
+.tech-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.tech h4 {
+    margin: 0 0 1rem 0;
+    color: white;
+    font-size: 1.2rem;
+    min-height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech p {
+    color: #ccccff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Заключение */
+.networks-conclusion {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #e6f2ff, #cce0ff);
+    border-radius: 10px;
+    border-left: 4px solid #0066cc;
+}
+
+.highlight {
+    color: #0066cc;
+    font-weight: 600;
+    background: rgba(0, 102, 204, 0.1);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+}
+
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #computerNetworksInfo {
+        padding: 1rem;
+    }
+    
+    .models-comparison,
+    .devices-grid,
+    .wifi-generations,
+    .ethernet-standards,
+    .protocols-grid,
+    .security-measures,
+    .future-tech {
+        grid-template-columns: 1fr;
+    }
+    
+    .protocol-group {
+        margin-bottom: 2rem;
+    }
+    
+    .protocol-group:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .device-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .device-icon {
+        align-self: center;
+    }
+    
+    .gen-header,
+    .std-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .measure-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+
+/* Анимации */
+@keyframes networkPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 102, 204, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 102, 204, 0);
+    }
+}
+
+.model-card,
+.device-card,
+.generation,
+.standard,
+.protocol,
+.measure,
+.tech {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.model-card:hover {
+    animation: networkPulse 2s infinite;
+}
+
+/* Анимация затухания и подъема */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Задержки для анимации */
+.model-card:nth-child(2) { animation-delay: 0.1s; }
+.device-card:nth-child(2) { animation-delay: 0.2s; }
+.device-card:nth-child(3) { animation-delay: 0.3s; }
+.generation:nth-child(2) { animation-delay: 0.1s; }
+.generation:nth-child(3) { animation-delay: 0.2s; }
+.generation:nth-child(4) { animation-delay: 0.3s; }
+.standard:nth-child(2) { animation-delay: 0.1s; }
+.standard:nth-child(3) { animation-delay: 0.2s; }
+.standard:nth-child(4) { animation-delay: 0.3s; }
+
+/* Кастомный скроллбар */
+#computerNetworksInfo::-webkit-scrollbar {
+    width: 10px;
+}
+
+#computerNetworksInfo::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+#computerNetworksInfo::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0066cc, #00994d);
+    border-radius: 5px;
+}
+
+#computerNetworksInfo::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #0052a3, #007a3d);
+}
+
