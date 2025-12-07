@@ -155,5 +155,82 @@
   <div class="feedback" id="feedback"></div>
   <button class="reset-btn" id="resetBtn">Начать заново</button>
   <button class="back-btn" id="backBtn" onclick="window.location.href='/'">На первую страницу</button>
+
+  <script>
+    const pins = document.querySelectorAll('.pin');
+    const nodeLabel = document.getElementById('node-label');
+    const deviceSelect = document.getElementById('device-select');
+    const applyBtn = document.getElementById('apply-btn');
+    const feedback = document.getElementById('feedback');
+    const resetBtn = document.getElementById('resetBtn');
+    const backBtn = document.getElementById('backBtn');
+
+    let activePin = null;
+    const correct = {
+      cpu: "Процессор",
+      ram: "Оперативная память",
+      storage: "Запоминающие устройства",
+      video: "Видеокарта",
+      battery: "Батарейка CMOS"
+    };
+    let solved = {};
+
+    pins.forEach(pin => {
+      pin.textContent = '●';
+      pin.addEventListener('click', () => {
+        pins.forEach(p => p.classList.remove('active'));
+        pin.classList.add('active');
+        activePin = pin;
+        nodeLabel.textContent = '---';
+        deviceSelect.disabled = false;
+        applyBtn.disabled = false;
+        deviceSelect.value = '';
+        feedback.textContent = '';
+      });
+    });
+
+    applyBtn.addEventListener('click', () => {
+      if (!activePin) return;
+      const pinType = activePin.dataset.pin;
+      const userType = deviceSelect.value;
+      if (userType === pinType) {
+        activePin.classList.remove('active');
+        activePin.classList.add('solved');
+        activePin.textContent = '✔';
+        solved[pinType] = true;
+        feedback.textContent = `Отлично! ${correct[pinType]} подключен верно.`;
+        feedback.style.color = '#219d39';
+        nodeLabel.textContent = '---';
+        applyBtn.disabled = true;
+        deviceSelect.disabled = true;
+      } else {
+        feedback.textContent = 'Ошибка! Выбран неправильный компонент, попробуйте еще раз.';
+        feedback.style.color = '#dc3545';
+      }
+      activePin = null;
+
+      // Если всё собрано правильно — показать кнопку возврата
+      if (Object.keys(solved).length === pins.length) {
+        feedback.textContent = 'Поздравляем! Все компоненты определены правильно.';
+        feedback.style.color = '#0056b3';
+        backBtn.classList.add('show');
+      }
+    });
+
+    resetBtn.addEventListener('click', () => {
+      pins.forEach(pin => {
+        pin.textContent = '●';
+        pin.classList.remove('active', 'solved');
+      });
+      solved = {};
+      activePin = null;
+      nodeLabel.textContent = '---';
+      deviceSelect.value = '';
+      feedback.textContent = '';
+      deviceSelect.disabled = true;
+      applyBtn.disabled = true;
+      backBtn.classList.remove('show');
+    });
+  </script>
 </body>
 </html>
