@@ -2012,6 +2012,86 @@ window.onload = function () {
 
 
 
+  // --- Новый интерактив сборки ПК с drag and drop ---
+
+  const components = document.querySelectorAll('.component-icon');
+  const assemblyArea = document.getElementById('assembly-area');
+  const resultMessage = document.getElementById('resultMessage');
+
+  components.forEach(comp => {
+    comp.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('componentId', comp.id);
+    });
+  });
+
+  assemblyArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    assemblyArea.style.borderColor = '#4caf50';
+  });
+
+  assemblyArea.addEventListener('dragleave', (e) => {
+    assemblyArea.style.borderColor = '#888';
+  });
+
+  assemblyArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    assemblyArea.style.borderColor = '#888';
+
+    const componentId = e.dataTransfer.getData('componentId');
+    if (componentId && !document.getElementById('assembled-' + componentId)) {
+      const elem = document.createElement('img');
+      elem.src = document.getElementById(componentId).src;
+      elem.alt = document.getElementById(componentId).alt;
+      elem.style.width = '60px';
+      elem.style.margin = '0 10px';
+      elem.id = 'assembled-' + componentId;
+      elem.title = elem.alt;
+      assemblyArea.appendChild(elem);
+
+      checkAssembly();
+    }
+  });
+
+  const retryButton = document.getElementById('retryButton');
+
+  retryButton.addEventListener('click', () => {
+    // Очистить область сборки
+    while (assemblyArea.firstChild) {
+      assemblyArea.removeChild(assemblyArea.firstChild);
+    }
+    // Очистить сообщение и скрыть кнопку
+    resultMessage.textContent = '';
+    retryButton.style.display = 'none';
+  });
+
+  function checkAssembly() {
+    const requiredOrder = ['assembled-cpu', 'assembled-ram', 'assembled-storage', 'assembled-video', 'assembled-io'];
+    const assembledElems = Array.from(assemblyArea.children).filter(el => el.id && el.id.startsWith('assembled-'));
+
+    if (assembledElems.length !== requiredOrder.length) {
+      resultMessage.textContent = '';
+      resultMessage.style.color = 'red';
+      retryButton.style.display = 'inline-block';
+      return;
+    }
+
+    for (let i = 0; i < requiredOrder.length; i++) {
+      if (assembledElems[i].id !== requiredOrder[i]) {
+        resultMessage.textContent = 'Ошибка: комплектующие собраны не в правильном порядке. Попробуйте еще раз.';
+        resultMessage.style.color = 'red';
+        retryButton.style.display = 'inline-block';
+        return;
+      }
+    }
+
+    resultMessage.textContent = 'Молодец! Все комплектующие правильно соединены.';
+    resultMessage.style.color = 'green';
+    retryButton.style.display = 'none'; // скрываем кнопку при успехе
+
+  }
+
+
+
 
 
 };
