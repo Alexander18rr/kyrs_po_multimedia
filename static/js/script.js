@@ -1597,16 +1597,361 @@ window.onload = function () {
       }
     }
   `;
+
+
+  // для секции архитектуры компьютеров
+        function initArchitectureSection() {
+    // Данные для компонентов архитектуры
+            const archData = {
+                'alu': {
+                    title: '⚡ Арифметико-логическое устройство (АЛУ)',
+                    description: 'Основной блок процессора, выполняющий арифметические и логические операции.',
+                    functions: [
+                        'Выполнение арифметических операций (сложение, вычитание, умножение, деление)',
+                        'Логические операции (И, ИЛИ, НЕ, XOR)',
+                        'Битовые сдвиги и вращения',
+                        'Сравнение чисел и установка флагов'
+                    ],
+                    characteristics: [
+                        'Разрядность: 32, 64, 128 бит',
+                        'Поддержка операций с плавающей точкой',
+                        'Конвейеризация для повышения производительности',
+                        'Специализированные блоки (умножитель, делитель)'
+                    ],
+                    icon: '⚡',
+                    color: '#4facfe'
+                },
+                'cu': {
+                    title: '🎛️ Устройство управления (УУ)',
+                    description: 'Координирует работу всех компонентов процессора, управляет выполнением команд.',
+                    functions: [
+                        'Декодирование инструкций из памяти',
+                        'Управление последовательностью выполнения команд',
+                        'Генерация управляющих сигналов для других компонентов',
+                        'Обработка прерываний и исключений'
+                    ],
+                    characteristics: [
+                        'Микропрограммное или аппаратное управление',
+                        'Конвейер команд (instruction pipeline)',
+                        'Предсказание переходов (branch prediction)',
+                        'Внеочередное исполнение (out-of-order execution)'
+                    ],
+                    icon: '🎛️',
+                    color: '#00f2fe'
+                },
+                'memory': {
+                    title: '💾 Память',
+                    description: 'Хранит программы и данные, к которым обращается процессор во время работы.',
+                    functions: [
+                        'Хранение выполняемых программ (инструкций)',
+                        'Хранение данных для обработки',
+                        'Временное сохранение промежуточных результатов',
+                        'Кэширование часто используемой информации'
+                    ],
+                    characteristics: [
+                        'Иерархическая структура (регистры → кэш → ОЗУ → ПЗУ)',
+                        'Разные типы памяти (SRAM, DRAM, Flash, ROM)',
+                        'Разная скорость доступа и стоимость',
+                        'Принцип локализации обращений (temporal/spatial locality)'
+                    ],
+                    icon: '💾',
+                    color: '#ff9a9e'
+                },
+                'io': {
+                    title: '🖥️ Устройства ввода-вывода (УВВ)',
+                    description: 'Обеспечивают взаимодействие компьютера с внешним миром.',
+                    functions: [
+                        'Ввод данных от пользователя (клавиатура, мышь, микрофон)',
+                        'Вывод результатов работы (монитор, принтер, динамики)',
+                        'Хранение данных на внешних носителях',
+                        'Сетевое взаимодействие и коммуникация'
+                    ],
+                    characteristics: [
+                        'Разные интерфейсы подключения (USB, HDMI, Ethernet)',
+                        'Разные скорости передачи данных',
+                        'Прямой доступ к памяти (DMA)',
+                        'Прерывания для асинхронной работы'
+                    ],
+                    icon: '🖥️',
+                    color: '#a18cd1'
+                }
+            };
+    
+            // Обработчики для компонентов архитектуры
+            const archComponents = document.querySelectorAll('.architecture-component');
+            const archDetail = document.getElementById('archDetail');
+    
+            if (archComponents.length > 0 && archDetail) {
+                archComponents.forEach(component => {
+                    component.addEventListener('mouseenter', function() {
+                        const compType = this.dataset.component;
+                        const data = archData[compType];
+                
+                        if (data) {
+                            const functionsHtml = data.functions.map(func => 
+                                `<li>${func}</li>`
+                            ).join('');
+                    
+                            const charsHtml = data.characteristics.map(char => 
+                                `<li>${char}</li>`
+                            ).join('');
+                    
+                            archDetail.innerHTML = `
+                                <div class="arch-detail-content" style="border-left: 5px solid ${data.color}">
+                                    <div class="arch-detail-header">
+                                        <span class="arch-detail-icon">${data.icon}</span>
+                                        <h4>${data.title}</h4>
+                                    </div>
+                                    <p class="arch-detail-description">${data.description}</p>
+                            
+                                    <div class="arch-detail-section">
+                                        <h5><span style="color: ${data.color}">⚙️</span> Основные функции:</h5>
+                                        <ul class="arch-detail-functions">
+                                            ${functionsHtml}
+                                        </ul>
+                                    </div>
+                            
+                                    <div class="arch-detail-section">
+                                        <h5><span style="color: ${data.color}">📊</span> Характеристики:</h5>
+                                        <ul class="arch-detail-characteristics">
+                                            ${charsHtml}
+                                        </ul>
+                                    </div>
+                            
+                                    <div class="arch-detail-tip">
+                                        <strong>💡 Интересный факт:</strong> ${getArchTip(compType)}
+                                    </div>
+                                </div>
+                            `;
+                    
+                            // Анимация появления
+                            archDetail.style.opacity = '0';
+                            archDetail.style.transform = 'translateY(10px)';
+                    
+                            setTimeout(() => {
+                                archDetail.style.transition = 'all 0.3s ease';
+                                archDetail.style.opacity = '1';
+                                archDetail.style.transform = 'translateY(0)';
+                            }, 10);
+                        }
+                    });
+            
+                    // Для мобильных устройств
+                    component.addEventListener('touchstart', function(e) {
+                        e.preventDefault();
+                        const compType = this.dataset.component;
+                        const data = archData[compType];
+                
+                        if (data) {
+                            // Аналогичный код для отображения информации
+                            const functionsHtml = data.functions.map(func => 
+                                `<li>${func}</li>`
+                            ).join('');
+                    
+                            const charsHtml = data.characteristics.map(char => 
+                                `<li>${char}</li>`
+                            ).join('');
+                    
+                            archDetail.innerHTML = `
+                                <div class="arch-detail-content" style="border-left: 5px solid ${data.color}">
+                                    <div class="arch-detail-header">
+                                        <span class="arch-detail-icon">${data.icon}</span>
+                                        <h4>${data.title}</h4>
+                                    </div>
+                                    <p class="arch-detail-description">${data.description}</p>
+                            
+                                    <div class="arch-detail-section">
+                                        <h5><span style="color: ${data.color}">⚙️</span> Основные функции:</h5>
+                                        <ul class="arch-detail-functions">
+                                            ${functionsHtml}
+                                        </ul>
+                                    </div>
+                            
+                                    <div class="arch-detail-section">
+                                        <h5><span style="color: ${data.color}">📊</span> Характеристики:</h5>
+                                        <ul class="arch-detail-characteristics">
+                                            ${charsHtml}
+                                        </ul>
+                                    </div>
+                            
+                                    <div class="arch-detail-tip">
+                                        <strong>💡 Интересный факт:</strong> ${getArchTip(compType)}
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    });
+                });
+        
+                // Активируем первый компонент по умолчанию
+                setTimeout(() => {
+                    if (archComponents[0]) {
+                        const event = new MouseEvent('mouseenter');
+                        archComponents[0].dispatchEvent(event);
+                    }
+                }, 2000);
+            }
+    
+            function getArchTip(compType) {
+                const tips = {
+                    'alu': 'Современные процессоры могут иметь несколько АЛУ, работающих параллельно.',
+                    'cu': 'УУ современных процессоров может выполнять до 6 команд одновременно благодаря суперскалярной архитектуре.',
+                    'memory': 'Кэш-память L1 работает почти в 100 раз быстрее основной памяти (ОЗУ).',
+                    'io': 'Современные SSD используют интерфейс NVMe, который в 6 раз быстрее традиционного SATA.'
+                };
+                return tips[compType] || 'Это ключевой компонент компьютерной архитектуры.';
+            }
+    
+            // Викторина
+            const quizQuestions = [
+                {
+                    question: 'Какой принцип архитектуры фон Неймана позволяет программам модифицировать сами себя?',
+                    options: {
+                        'memory': 'Принцип однородности памяти',
+                        'program': 'Принцип программного управления',
+                        'address': 'Принцип адресности',
+                        'sequence': 'Принцип последовательного выполнения'
+                    },
+                    correct: 'memory',
+                    explanation: 'Принцип однородности памяти позволяет хранить программы и данные в одном месте, что делает возможным самоизменяющийся код.'
+                },
+                {
+                    question: 'Какая архитектура использует раздельную память для команд и данных?',
+                    options: {
+                        'neumann': 'Архитектура фон Неймана',
+                        'harvard': 'Гарвардская архитектура',
+                        'modified': 'Модифицированная гарвардская',
+                        'all': 'Все перечисленные'
+                    },
+                    correct: 'harvard',
+                    explanation: 'Гарвардская архитектура использует физически раздельную память для команд и данных, что позволяет параллельный доступ.'
+                },
+                {
+                    question: 'Какой компонент архитектуры отвечает за выполнение арифметических операций?',
+                    options: {
+                        'cu': 'Устройство управления',
+                        'alu': 'Арифметико-логическое устройство',
+                        'memory': 'Память',
+                        'io': 'Устройства ввода-вывода'
+                    },
+                    correct: 'alu',
+                    explanation: 'Арифметико-логическое устройство (АЛУ) выполняет все арифметические и логические операции в процессоре.'
+                },
+                {
+                    question: 'Что такое "узкое горло" в архитектуре фон Неймана?',
+                    options: {
+                        'slow-alu': 'Медленная работа АЛУ',
+                        'memory-bottleneck': 'Ограничение пропускной способности памяти',
+                        'io-limit': 'Ограничения устройств ввода-вывода',
+                        'cu-delay': 'Задержки в устройстве управления'
+                    },
+                    correct: 'memory-bottleneck',
+                    explanation: '"Узкое горло" фон Неймана — это ограничение производительности из-за того, что команды и данные используют одну и ту же шину памяти.'
+                }
+            ];
+    
+            let currentQuestion = 0;
+    
+            const quizOptionButtons = document.querySelectorAll('.quiz-option');
+            const quizFeedback = document.getElementById('quizFeedback');
+            const nextQuestionBtn = document.getElementById('nextQuestion');
+            const quizQuestion = document.getElementById('quizQuestion');
+    
+            if (quizOptionButtons.length > 0 && quizFeedback && nextQuestionBtn && quizQuestion) {
+                // Показываем первый вопрос
+                showQuestion(currentQuestion);
+        
+                quizOptionButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const userAnswer = this.dataset.answer;
+                        const correctAnswer = quizQuestions[currentQuestion].correct;
+                
+                        // Сбрасываем все кнопки
+                        quizOptionButtons.forEach(btn => {
+                            btn.style.background = 'rgba(255, 255, 255, 0.1)';
+                            btn.style.borderColor = '#4facfe';
+                        });
+                
+                        // Подсвечиваем выбранную кнопку
+                        this.style.background = userAnswer === correctAnswer 
+                            ? 'rgba(76, 175, 80, 0.3)' 
+                            : 'rgba(244, 67, 54, 0.3)';
+                        this.style.borderColor = userAnswer === correctAnswer ? '#4CAF50' : '#f44336';
+                
+                        // Показываем правильный ответ
+                        const correctButton = Array.from(quizOptionButtons).find(
+                            btn => btn.dataset.answer === correctAnswer
+                        );
+                        if (correctButton && userAnswer !== correctAnswer) {
+                            correctButton.style.background = 'rgba(76, 175, 80, 0.3)';
+                            correctButton.style.borderColor = '#4CAF50';
+                        }
+                
+                        // Показываем объяснение
+                        quizFeedback.innerHTML = `
+                            <div style="text-align: center;">
+                                <p style="color: ${userAnswer === correctAnswer ? '#4CAF50' : '#f44336'}; font-weight: 600; margin-bottom: 10px;">
+                                    ${userAnswer === correctAnswer ? '✅ Правильно!' : '❌ Неправильно!'}
+                                </p>
+                                <p style="color: #cccccc;">${quizQuestions[currentQuestion].explanation}</p>
+                            </div>
+                        `;
+                    });
+                });
+        
+                nextQuestionBtn.addEventListener('click', function() {
+                    currentQuestion = (currentQuestion + 1) % quizQuestions.length;
+                    showQuestion(currentQuestion);
+            
+                    // Сбрасываем кнопки
+                    quizOptionButtons.forEach(btn => {
+                        btn.style.background = 'rgba(255, 255, 255, 0.1)';
+                        btn.style.borderColor = '#4facfe';
+                    });
+            
+                    // Сбрасываем обратную связь
+                    quizFeedback.innerHTML = '<p>Выберите ответ, чтобы проверить свои знания!</p>';
+                });
+        
+                function showQuestion(index) {
+                    const question = quizQuestions[index];
+                    quizQuestion.innerHTML = `<p>${question.question}</p>`;
+            
+                    // Обновляем текст кнопок
+                    quizOptionButtons.forEach((button, i) => {
+                        const answerKey = Object.keys(question.options)[i];
+                        if (answerKey) {
+                            button.textContent = question.options[answerKey];
+                            button.dataset.answer = answerKey;
+                        }
+                    });
+            
+                    // Обновляем текст кнопки "Следующий вопрос"
+                    nextQuestionBtn.textContent = index === quizQuestions.length - 1 
+                        ? 'Начать заново →' 
+                        : 'Следующий вопрос →';
+                }
+            }
+        }
+
+        // Инициализация секции архитектуры
+        if (document.getElementById('computerArchitectureInfo')) {
+            initArchitectureSection();
+    
+            // Подсказка для новых пользователей
+            if (!localStorage.getItem('architectureVisited')) {
+                setTimeout(() => {
+                    const showTip = confirm('🏗️ Добро пожаловать в раздел архитектуры компьютеров! Нажмите на компоненты схемы, чтобы узнать о них подробнее. Нажмите OK, чтобы продолжить.');
+                    if (showTip) {
+                        localStorage.setItem('architectureVisited', 'true');
+                    }
+                }, 2000);
+            }
+        }
   
   document.head.appendChild(futureStyles);
 
   console.log('Все скрипты успешно загружены и инициализированы, включая футуристическую секцию!');
-
-
-
-
-
-
 
 
 
