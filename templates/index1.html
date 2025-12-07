@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сборка компьютера: материнская плата</title>
+  <style>
+    /* Стили будут добавлены позже */
+  </style>
+</head>
+<body>
+  <h2>Сборка компьютера: укажи компоненты на плате</h2>
+  <div class="board-container">
+    <div class="board-box">
+      <img src="https://dbimg.eu/i/JQulL5x6.jpg" alt="Материнская плата" class="board-img" id="mb-img">
+      <!-- Пины будут добавлены позже -->
+    </div>
+  </div>
+
+  <div class="selector">
+    <label>Выбери узел:</label>
+    <span id="node-label">---</span><br><br>
+    <select id="device-select" disabled>
+      <option value="">Выбери компонент...</option>
+      <option value="cpu">Процессор</option>
+      <option value="ram">Оперативная память</option>
+      <option value="storage">Запоминающие устройства</option>
+      <option value="video">Видеокарта</option>
+      <option value="battery">Батарейка CMOS</option>
+    </select>
+    <button id="apply-btn" disabled>Применить</button>
+  </div>
+  <div class="feedback" id="feedback"></div>
+  <button class="reset-btn" id="resetBtn">Начать заново</button>
+  <button class="back-btn" id="backBtn" onclick="window.location.href='/'">На первую страницу</button>
+</body>
+</html>
