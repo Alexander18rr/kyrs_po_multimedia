@@ -12192,3 +12192,1010 @@ footer {
 #iotPlatformsInfo::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #006699, #008866);
 }
+
+
+
+/* Стили для секции аппаратного обеспечения для ИИ */
+#aiHardwareInfo {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(100, 0, 200, 0.15);
+    color: #f0f0ff;
+}
+
+/* Эволюция AI hardware */
+.ai-hardware-evolution {
+    background: linear-gradient(135deg, #1e1e3f, #2d2d5c);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(100, 0, 200, 0.3);
+}
+
+.ai-hardware-evolution h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #9966ff;
+    font-size: 1.4rem;
+}
+
+.evolution-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #9966ff, #cc99ff);
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.evolution-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.evolution-timeline::before {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, 
+        #ff3366, 
+        #ff6633, 
+        #ff9933, 
+        #33ccff, 
+        #9966ff);
+    border-radius: 2px;
+}
+
+.era {
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border-left: 4px solid;
+    transition: all 0.3s ease;
+}
+
+.era:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.era:nth-child(1) { border-color: #ff3366; }
+.era:nth-child(2) { border-color: #ff6633; }
+.era:nth-child(3) { border-color: #ff9933; }
+.era:nth-child(4) { border-color: #33ccff; }
+.era:nth-child(5) { border-color: #9966ff; }
+
+.era::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: inherit;
+    border: 3px solid;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.era:nth-child(1)::before { background: #ff3366; border-color: #ff3366; }
+.era:nth-child(2)::before { background: #ff6633; border-color: #ff6633; }
+.era:nth-child(3)::before { background: #ff9933; border-color: #ff9933; }
+.era:nth-child(4)::before { background: #33ccff; border-color: #33ccff; }
+.era:nth-child(5)::before { background: #9966ff; border-color: #9966ff; }
+
+.era-period {
+    position: absolute;
+    left: -5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333355;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.era-content h4 {
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.era-content ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.era-content li {
+    margin-bottom: 0.5rem;
+    color: #ccccff;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Изображение */
+#aiHardwareInfo img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(153, 102, 255, 0.3);
+}
+
+/* Типы AI ускорителей */
+.ai-accelerator-types {
+    margin: 2.5rem 0;
+}
+
+.ai-accelerator-types h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #33ccff;
+    font-size: 1.4rem;
+}
+
+.accelerator-icon {
+    font-size: 1.5rem;
+    background: #33ccff;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.accelerators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.accelerator {
+    background: linear-gradient(135deg, rgba(30, 30, 63, 0.8), rgba(45, 45, 92, 0.8));
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(51, 204, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.accelerator:hover {
+    transform: translateY(-5px);
+    border-color: #33ccff;
+    box-shadow: 0 8px 25px rgba(51, 204, 255, 0.2);
+}
+
+.accelerator-header {
+    padding: 1.2rem;
+    background: rgba(51, 204, 255, 0.1);
+    border-bottom: 1px solid rgba(51, 204, 255, 0.2);
+    text-align: center;
+}
+
+.accelerator-header h4 {
+    margin: 0;
+    color: #33ccff;
+    font-size: 1.1rem;
+}
+
+.accelerator-content {
+    padding: 1.5rem;
+}
+
+.strengths, .weaknesses {
+    margin-bottom: 1.5rem;
+}
+
+.weaknesses:last-child {
+    margin-bottom: 0;
+}
+
+.strengths h5, .weaknesses h5 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1rem;
+}
+
+.strengths h5 {
+    color: #66ff66;
+}
+
+.weaknesses h5 {
+    color: #ff6666;
+}
+
+.strengths ul, .weaknesses ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.strengths li, .weaknesses li {
+    margin-bottom: 0.6rem;
+    color: #ccccff;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Современные AI чипы */
+.modern-ai-chips {
+    background: linear-gradient(135deg, #2d2d5c, #3d3d7c);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(255, 153, 51, 0.3);
+}
+
+.modern-ai-chips h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #ff9933;
+    font-size: 1.4rem;
+}
+
+.chips-icon {
+    font-size: 1.5rem;
+    background: #ff9933;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.chips-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.chip {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 153, 51, 0.3);
+    transition: all 0.3s ease;
+}
+
+.chip:hover {
+    transform: translateY(-5px);
+    border-color: #ff9933;
+    box-shadow: 0 8px 25px rgba(255, 153, 51, 0.2);
+}
+
+.chip-header {
+    padding: 1.2rem;
+    background: rgba(255, 153, 51, 0.1);
+    border-bottom: 1px solid rgba(255, 153, 51, 0.2);
+    text-align: center;
+}
+
+.chip-header h4 {
+    margin: 0;
+    color: #ff9933;
+    font-size: 1.2rem;
+}
+
+.chip-content {
+    padding: 1.5rem;
+}
+
+.specs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border-left: 3px solid #ff9933;
+}
+
+.spec-label {
+    color: #ccccff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.spec-value {
+    color: #ff9933;
+    font-size: 0.9rem;
+    text-align: right;
+    max-width: 60%;
+}
+
+/* Edge AI устройства */
+.edge-ai-devices {
+    margin: 2.5rem 0;
+}
+
+.edge-ai-devices h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #66ff66;
+    font-size: 1.4rem;
+}
+
+.edge-icon {
+    font-size: 1.5rem;
+    background: #66ff66;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: #1a1a2e;
+}
+
+.devices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.device {
+    background: linear-gradient(135deg, rgba(30, 30, 63, 0.8), rgba(45, 45, 92, 0.8));
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(102, 255, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.device:hover {
+    transform: translateY(-5px);
+    border-color: #66ff66;
+    box-shadow: 0 8px 25px rgba(102, 255, 102, 0.2);
+}
+
+.device-header {
+    padding: 1.2rem;
+    background: rgba(102, 255, 102, 0.1);
+    border-bottom: 1px solid rgba(102, 255, 102, 0.2);
+    text-align: center;
+}
+
+.device-header h4 {
+    margin: 0;
+    color: #66ff66;
+    font-size: 1.2rem;
+}
+
+.device-content {
+    padding: 1.5rem;
+}
+
+.series h5 {
+    margin: 0 0 0.8rem 0;
+    color: #66ff66;
+    font-size: 1rem;
+}
+
+.series ul {
+    padding-left: 1rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.series li {
+    margin-bottom: 0.6rem;
+    color: #ccccff;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.series li strong {
+    color: #ffffff;
+    margin-right: 0.3rem;
+}
+
+.applications {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(102, 255, 102, 0.3);
+}
+
+.app {
+    background: rgba(102, 255, 102, 0.2);
+    color: #66ff66;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Нейроморфные процессоры */
+.neuromorphic-chips {
+    background: linear-gradient(135deg, rgba(30, 30, 63, 0.8), rgba(45, 45, 92, 0.8));
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(153, 102, 255, 0.3);
+}
+
+.neuromorphic-chips h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #9966ff;
+    font-size: 1.4rem;
+}
+
+.neuro-icon {
+    font-size: 1.5rem;
+    background: #9966ff;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.neuromorphic-tech {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.tech {
+    background: rgba(153, 102, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid rgba(153, 102, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech:hover {
+    transform: translateY(-5px);
+    background: rgba(153, 102, 255, 0.15);
+    border-color: #9966ff;
+}
+
+.tech-header h4 {
+    margin: 0 0 1rem 0;
+    color: #9966ff;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(153, 102, 255, 0.3);
+}
+
+.tech-content p {
+    color: #ccccff;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.tech-content ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.tech-content li {
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.tech-content li strong {
+    color: #9966ff;
+    margin-right: 0.3rem;
+}
+
+/* Оптические вычисления для ИИ */
+.optical-ai {
+    margin: 2.5rem 0;
+}
+
+.optical-ai h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #ff66cc;
+    font-size: 1.4rem;
+}
+
+.optical-icon {
+    font-size: 1.5rem;
+    background: #ff66cc;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.optical-advantages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.advantage {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(255, 102, 204, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid rgba(255, 102, 204, 0.2);
+    transition: all 0.3s ease;
+}
+
+.advantage:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 102, 204, 0.15);
+    border-color: #ff66cc;
+}
+
+.advantage-icon {
+    font-size: 2rem;
+    background: #ff66cc;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.advantage-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: #ff66cc;
+    font-size: 1.1rem;
+}
+
+.advantage-content p {
+    margin: 0;
+    color: #ccccff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* AI в облаке vs на границе */
+.ai-cloud-vs-edge {
+    background: linear-gradient(135deg, #2d2d5c, #3d3d7c);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(51, 204, 255, 0.3);
+}
+
+.ai-cloud-vs-edge h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #33ccff;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.vs-icon {
+    font-size: 1.5rem;
+    background: #33ccff;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.side {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.side.cloud {
+    border-color: rgba(51, 204, 255, 0.3);
+}
+
+.side.edge {
+    border-color: rgba(102, 255, 102, 0.3);
+}
+
+.side:hover {
+    transform: translateY(-5px);
+}
+
+.side.cloud:hover {
+    box-shadow: 0 8px 25px rgba(51, 204, 255, 0.2);
+}
+
+.side.edge:hover {
+    box-shadow: 0 8px 25px rgba(102, 255, 102, 0.2);
+}
+
+.side-header {
+    padding: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+.side.cloud .side-header {
+    background: linear-gradient(135deg, #0099cc, #33ccff);
+}
+
+.side.edge .side-header {
+    background: linear-gradient(135deg, #009933, #66ff66);
+}
+
+.side-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.side-content {
+    padding: 1.5rem;
+}
+
+.pros, .cons {
+    margin-bottom: 1.5rem;
+}
+
+.cons:last-child {
+    margin-bottom: 0;
+}
+
+.pros h5, .cons h5 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1rem;
+}
+
+.pros h5 {
+    color: #66ff66;
+}
+
+.cons h5 {
+    color: #ff6666;
+}
+
+.pros ul, .cons ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.pros li, .cons li {
+    margin-bottom: 0.6rem;
+    color: #ccccff;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Тенденции развития */
+.ai-hardware-trends {
+    margin: 2.5rem 0;
+}
+
+.ai-hardware-trends h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: #ff9933;
+    font-size: 1.4rem;
+}
+
+.trends-icon {
+    font-size: 1.5rem;
+    background: #ff9933;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.trends-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.trend {
+    background: rgba(255, 153, 51, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid rgba(255, 153, 51, 0.2);
+    transition: all 0.3s ease;
+}
+
+.trend:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 153, 51, 0.15);
+    border-color: #ff9933;
+}
+
+.trend-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.trend h4 {
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.trend p {
+    color: #ccccff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Будущее AI hardware */
+.ai-hardware-future {
+    background: linear-gradient(135deg, rgba(30, 30, 63, 0.8), rgba(45, 45, 92, 0.8));
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(153, 102, 255, 0.3);
+}
+
+.ai-hardware-future h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    color: #9966ff;
+    font-size: 1.4rem;
+}
+
+.future-icon {
+    font-size: 1.5rem;
+    background: #9966ff;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: white;
+}
+
+.future-predictions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.prediction {
+    background: rgba(153, 102, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid rgba(153, 102, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.prediction:hover {
+    transform: translateY(-5px);
+    background: rgba(153, 102, 255, 0.15);
+    border-color: #9966ff;
+}
+
+.prediction h4 {
+    margin: 0 0 1rem 0;
+    color: #9966ff;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(153, 102, 255, 0.3);
+}
+
+.prediction ul {
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.prediction li {
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Заключение */
+.ai-hardware-conclusion {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(153, 102, 255, 0.1), rgba(51, 204, 255, 0.1));
+    border-radius: 10px;
+    border-left: 4px solid #9966ff;
+}
+
+.highlight {
+    color: #9966ff;
+    font-weight: 600;
+    background: rgba(153, 102, 255, 0.1);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+}
+
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #aiHardwareInfo {
+        padding: 1rem;
+    }
+    
+    .evolution-timeline {
+        padding-left: 2rem;
+    }
+    
+    .evolution-timeline::before {
+        left: 1rem;
+    }
+    
+    .era-period {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+    
+    .era::before {
+        left: -1.5rem;
+        width: 12px;
+        height: 12px;
+    }
+    
+    .accelerators-grid,
+    .chips-comparison,
+    .devices-grid,
+    .neuromorphic-tech,
+    .optical-advantages,
+    .comparison,
+    .trends-list,
+    .future-predictions {
+        grid-template-columns: 1fr;
+    }
+    
+    .advantage {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .spec {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    .spec-value {
+        max-width: 100%;
+        text-align: left;
+    }
+    
+    .applications {
+        justify-content: center;
+    }
+    
+    .advantage-icon {
+        align-self: center;
+    }
+}
+
+/* Анимации */
+@keyframes aiGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(153, 102, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(153, 102, 255, 0.8);
+    }
+}
+
+@keyframes neuralPulse {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+.accelerator:hover,
+.chip:hover,
+.device:hover,
+.tech:hover,
+.advantage:hover,
+.trend:hover,
+.prediction:hover {
+    animation: aiGlow 2s infinite;
+}
+
+.ai-hardware-evolution h3 {
+    background: linear-gradient(90deg, 
+        #ff3366, #ff6633, #ff9933, #33ccff, #9966ff,
+        #ff3366, #ff6633, #ff9933, #33ccff, #9966ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neuralPulse 10s linear infinite;
+}
+
+/* Анимация затухания и подъема */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.era,
+.accelerator,
+.chip,
+.device,
+.tech,
+.advantage,
+.side,
+.trend,
+.prediction {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Задержки для анимации */
+.era:nth-child(2) { animation-delay: 0.1s; }
+.era:nth-child(3) { animation-delay: 0.2s; }
+.era:nth-child(4) { animation-delay: 0.3s; }
+.era:nth-child(5) { animation-delay: 0.4s; }
+.accelerator:nth-child(2) { animation-delay: 0.1s; }
+.accelerator:nth-child(3) { animation-delay: 0.2s; }
+.accelerator:nth-child(4) { animation-delay: 0.3s; }
+
+/* Кастомный скроллбар */
+#aiHardwareInfo::-webkit-scrollbar {
+    width: 10px;
+}
+
+#aiHardwareInfo::-webkit-scrollbar-track {
+    background: rgba(30, 30, 63, 0.5);
+    border-radius: 5px;
+}
+
+#aiHardwareInfo::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #9966ff, #33ccff);
+    border-radius: 5px;
+}
+
+#aiHardwareInfo::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #8855ee, #22bbee);
+}
